@@ -32,6 +32,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         userIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/userIcon.png"))); // NOI18N
 

@@ -29,30 +29,44 @@ public class MenuImportar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        importarXMLButtom = new javax.swing.JButton();
-        importarBoletoButtom = new javax.swing.JButton();
-        valorTextField = new javax.swing.JTextField();
         valorLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-
-        jButton1.setText("jButton1");
+        fornecedorLabel = new javax.swing.JLabel();
+        tooltipLabel = new javax.swing.JLabel();
+        vencimentoLabel = new javax.swing.JLabel();
+        importarArquivosButton = new javax.swing.JButton();
+        importarLoteButton = new javax.swing.JButton();
+        valorTextField = new javax.swing.JTextField();
+        vencimentoTextField = new javax.swing.JTextField();
+        fornecedorTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("importFrame"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(400, 400));
+        setResizable(false);
+        setSize(new java.awt.Dimension(400, 400));
 
-        importarXMLButtom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/importIcon.png"))); // NOI18N
-        importarXMLButtom.setText("Importar XML");
-        importarXMLButtom.addActionListener(new java.awt.event.ActionListener() {
+        valorLabel.setText("Valor:");
+
+        fornecedorLabel.setText("Fornecedor:");
+
+        tooltipLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/questionIcon.png"))); // NOI18N
+        tooltipLabel.setToolTipText("<html> \n<body>\n <strong>Importar por Lote</strong><br> \nClique para importar um lote de arquivos XML ou boleto, util para varios arquivos. \n</body> \n</html> ");
+
+        vencimentoLabel.setText("Vencimento:");
+
+        importarArquivosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/importIcon.png"))); // NOI18N
+        importarArquivosButton.setText("Importar XML/Boleto");
+        importarArquivosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                importarXMLButtomActionPerformed(evt);
+                importarArquivosButtonActionPerformed(evt);
             }
         });
 
-        importarBoletoButtom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/importIcon.png"))); // NOI18N
-        importarBoletoButtom.setText("Importar Boleto");
-        importarBoletoButtom.addActionListener(new java.awt.event.ActionListener() {
+        importarLoteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/importIcon.png"))); // NOI18N
+        importarLoteButton.setText("Importar por Lote");
+        importarLoteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                importarBoletoButtomActionPerformed(evt);
+                importarLoteButtonActionPerformed(evt);
             }
         });
 
@@ -62,73 +76,94 @@ public class MenuImportar extends javax.swing.JFrame {
             }
         });
 
-        valorLabel.setText("Valor:");
-
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(importarBoletoButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(importarXMLButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(33, 33, 33)
+                        .addComponent(fornecedorLabel)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(valorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(57, 57, 57)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vencimentoLabel)
+                            .addComponent(vencimentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(71, 71, 71))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(valorLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(111, 111, 111))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(importarLoteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(importarArquivosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tooltipLabel))
+                    .addComponent(fornecedorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(valorLabel)
-                    .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(vencimentoLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(vencimentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addComponent(fornecedorLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(importarBoletoButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(importarXMLButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28))
+                .addComponent(fornecedorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(importarArquivosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(importarLoteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(tooltipLabel)
+                        .addGap(77, 77, 77))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void importarXMLButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarXMLButtomActionPerformed
-    JFileChooser fileChooser = new JFileChooser();
+    private void importarArquivosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarArquivosButtonActionPerformed
+   /* JFileChooser fileChooser = new JFileChooser();
     int returnValue = fileChooser.showOpenDialog(null);
     if (returnValue == JFileChooser.APPROVE_OPTION) {
     File selectedFile = fileChooser.getSelectedFile();
         // Faça algo com o arquivo selecionado...
-}
-    }//GEN-LAST:event_importarXMLButtomActionPerformed
+    }*/
+    }//GEN-LAST:event_importarArquivosButtonActionPerformed
 
-    private void importarBoletoButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarBoletoButtomActionPerformed
-    JFileChooser fileChooser = new JFileChooser();
-    int returnValue = fileChooser.showOpenDialog(null);
-    if (returnValue == JFileChooser.APPROVE_OPTION) {
-    File selectedFile = fileChooser.getSelectedFile();
-        // Faça algo com o arquivo selecionado...
-    }
-    }//GEN-LAST:event_importarBoletoButtomActionPerformed
-
+    //TextField para o valor do arquivo importado
     private void valorTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valorTextFieldActionPerformed
-        
+        // Simulação da leitura do arquivo XML e obtenção do valor desejado
+        String valorDoXML = "100.00";
+
+        // Definir o valor no campo de texto
+        valorTextField.setText(valorDoXML);  
     }//GEN-LAST:event_valorTextFieldActionPerformed
+
+    private void importarLoteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarLoteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_importarLoteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,7 +201,7 @@ public class MenuImportar extends javax.swing.JFrame {
     }
 
     public void importarXML() {
-    // Lógica de importação do XML e obtenção dos dados
+   /* // Lógica de importação do XML e obtenção dos dados
 
     // Supondo que 'documento' seja um objeto Document representando o XML
     NodeList valorNodes = documento.getElementsByTagName("valor");
@@ -175,16 +210,19 @@ public class MenuImportar extends javax.swing.JFrame {
         String valor = valorNode.getTextContent();
         valorField.setText(valor);
     }
-
+*/
     // Restante da lógica de importação e preenchimento de campos
 }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton importarBoletoButtom;
-    private javax.swing.JButton importarXMLButtom;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel fornecedorLabel;
+    private javax.swing.JTextField fornecedorTextField;
+    private javax.swing.JButton importarArquivosButton;
+    private javax.swing.JButton importarLoteButton;
+    private javax.swing.JLabel tooltipLabel;
     private javax.swing.JLabel valorLabel;
     private javax.swing.JTextField valorTextField;
+    private javax.swing.JLabel vencimentoLabel;
+    private javax.swing.JTextField vencimentoTextField;
     // End of variables declaration//GEN-END:variables
 }
