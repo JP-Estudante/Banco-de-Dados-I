@@ -1,5 +1,7 @@
 package SCP;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -18,10 +20,8 @@ import org.w3c.dom.Node;
 
 public class MenuImportar extends javax.swing.JFrame {
 
-   private javax.swing.JTextField valorTextField;
-   private JTextField vencimentoTextField;
    private String caminhoArquivo;
-
+   
     public MenuImportar() {
         initComponents();
     }
@@ -40,7 +40,7 @@ public class MenuImportar extends javax.swing.JFrame {
         vencimentoTextField = new javax.swing.JTextField();
         fornecedorTextField = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("importFrame"); // NOI18N
         setResizable(false);
         setSize(new java.awt.Dimension(400, 400));
@@ -144,58 +144,11 @@ public class MenuImportar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void importarArquivosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarArquivosButtonActionPerformed
-    JFileChooser fileChooser = new JFileChooser();
-    int returnValue = fileChooser.showOpenDialog(null);
-    if (returnValue == JFileChooser.APPROVE_OPTION) {
-        File selectedFile = fileChooser.getSelectedFile();
 
-        // Chamar o método importarXML passando o caminho do arquivo
-        String valorDoXML = importarXML(selectedFile.getAbsolutePath());
-        
-        valorTextField.setText(valorDoXML);
-
-        
-        // Atualizar a GUI na thread de despacho de eventos do Swing
-        SwingUtilities.invokeLater(() -> {
-            // Definir o valor no campo de texto
-            valorTextField.setText(valorDoXML);
-        });
-    }
     }//GEN-LAST:event_importarArquivosButtonActionPerformed
-
-    private String selecionarArquivo() {
-    JFileChooser fileChooser = new JFileChooser();
-    int returnValue = fileChooser.showOpenDialog(this);
-    if (returnValue == JFileChooser.APPROVE_OPTION) {
-        File selectedFile = fileChooser.getSelectedFile();
-        return selectedFile.getAbsolutePath();
-    }
-    return null;
-}
-
     
     //TextField para o valor do arquivo importado
     private void valorTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valorTextFieldActionPerformed
-       // Verificar se o caminho do arquivo está definido
-        if (caminhoArquivo != null) {
-        // Importar o XML e obter o valor desejado
-        String valorDoXML = importarXML(caminhoArquivo);
-
-        // Verificar se o valor do XML foi obtido com sucesso
-        if (valorDoXML != null) {
-            // Atualizar a GUI na thread de despacho de eventos do Swing
-            SwingUtilities.invokeLater(() -> {
-                // Definir o valor no campo de texto
-                valorTextField.setText(valorDoXML);
-            });
-        } else {
-            // Exibir mensagem de erro
-            JOptionPane.showMessageDialog(this, "Não foi possível obter o valor do arquivo XML.", "Erro", JOptionPane.ERROR_MESSAGE);
-        }
-    } else {
-        // Caminho do arquivo não definido, exibir mensagem de erro
-        JOptionPane.showMessageDialog(this, "Nenhum arquivo selecionado.", "Erro", JOptionPane.ERROR_MESSAGE);
-    }
     }//GEN-LAST:event_valorTextFieldActionPerformed
 
     private void importarLoteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarLoteButtonActionPerformed
@@ -236,52 +189,6 @@ public class MenuImportar extends javax.swing.JFrame {
             }
         });
     }
-
-public String importarXML(String caminhoArquivo) {
-    try {
-        // Lógica de importação do XML e obtenção dos dados
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(new File(caminhoArquivo));
-
-        // Supondo que 'document' seja um objeto Document representando o XML
-        NodeList valorNodes = document.getElementsByTagName("valor");
-        if (valorNodes.getLength() > 0) {
-            Node valorNode = valorNodes.item(0);
-            return valorNode.getTextContent();
-        }
-
-        // Restante da lógica de importação e preenchimento de campos
-
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-    return null;
-}
-
-public String lerVPag(String caminhoArquivo) {
-    try {
-        // Cria um DocumentBuilder
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        Document document = factory.newDocumentBuilder().parse(new File(caminhoArquivo));
-
-        // Cria um XPath para executar a consulta
-        XPathFactory xpathFactory = XPathFactory.newInstance();
-        XPath xpath = xpathFactory.newXPath();
-
-        // Compila a expressão XPath para localizar o elemento vPag
-        XPathExpression expr = xpath.compile("//vPag/text()");
-
-        // Executa a expressão XPath no documento XML
-        Node node = (Node) expr.evaluate(document, XPathConstants.NODE);
-
-        // Retorna o valor encontrado
-        return node.getNodeValue();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-    return null;
-}
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fornecedorLabel;
@@ -290,6 +197,8 @@ public String lerVPag(String caminhoArquivo) {
     private javax.swing.JButton importarLoteButton;
     private javax.swing.JLabel tooltipLabel;
     private javax.swing.JLabel valorLabel;
+    private javax.swing.JTextField valorTextField;
     private javax.swing.JLabel vencimentoLabel;
+    private javax.swing.JTextField vencimentoTextField;
     // End of variables declaration//GEN-END:variables
 }
