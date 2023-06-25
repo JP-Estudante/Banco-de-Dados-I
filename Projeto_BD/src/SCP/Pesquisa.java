@@ -21,8 +21,7 @@ public class Pesquisa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
+        pesquisaButtonGroup = new javax.swing.ButtonGroup();
         esquerdaFornecedorJRadioButton = new javax.swing.JRadioButton();
         pesquisaTextField = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -40,9 +39,10 @@ public class Pesquisa extends javax.swing.JFrame {
         setTitle("Pesquisa");
         setAutoRequestFocus(false);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setUndecorated(true);
         setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
 
+        pesquisaButtonGroup.add(esquerdaFornecedorJRadioButton);
         esquerdaFornecedorJRadioButton.setText("--> Fornecedor");
         esquerdaFornecedorJRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,9 +58,12 @@ public class Pesquisa extends javax.swing.JFrame {
         });
 
         tooltipLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/smallQuestionIcon.png"))); // NOI18N
+        tooltipLabel.setToolTipText("<html>\n<body>\n<strong> &rarr; Fornecedor </strong><br>\n  Exibe uma lista de fornecedores com base na palavra-chave fornecida.\n</body>\n</html>\n");
 
         tooltipLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/smallQuestionIcon.png"))); // NOI18N
+        tooltipLabel1.setToolTipText("<html>\n<body>\n<strong> &rarr; Fornecedor &larr; </strong><br>\nExibe uma lista de fornecedores que correspondem exatamente à palavra-chave fornecida.\n</body>\n</html>\n");
 
+        pesquisaButtonGroup.add(exatoFornecedorJRadioButton);
         exatoFornecedorJRadioButton.setText("--> Fornecedor <--");
         exatoFornecedorJRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +71,7 @@ public class Pesquisa extends javax.swing.JFrame {
             }
         });
 
+        pesquisaButtonGroup.add(exatoFornecedorJRadioButton1);
         exatoFornecedorJRadioButton1.setText("--> DD/MM/AA");
         exatoFornecedorJRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +81,8 @@ public class Pesquisa extends javax.swing.JFrame {
 
         tooltipLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/smallQuestionIcon.png"))); // NOI18N
 
-        exatoFornecedorJRadioButton2.setText("--> DD/MM/AA");
+        pesquisaButtonGroup.add(exatoFornecedorJRadioButton2);
+        exatoFornecedorJRadioButton2.setText("--> DD/MM/AA <--");
         exatoFornecedorJRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exatoFornecedorJRadioButton2ActionPerformed(evt);
@@ -101,29 +106,30 @@ public class Pesquisa extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pesquisaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
                         .addComponent(esquerdaFornecedorJRadioButton)
                         .addGap(3, 3, 3)
                         .addComponent(tooltipLabel)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(exatoFornecedorJRadioButton)
                         .addGap(3, 3, 3)
                         .addComponent(tooltipLabel1)
-                        .addGap(33, 33, 33)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exatoFornecedorJRadioButton1)
                         .addGap(3, 3, 3)
                         .addComponent(tooltipLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(exatoFornecedorJRadioButton2)
                         .addGap(3, 3, 3)
-                        .addComponent(tooltipLabel3))
+                        .addComponent(tooltipLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,23 +146,22 @@ public class Pesquisa extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(tooltipLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(exatoFornecedorJRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(tooltipLabel2))
                     .addComponent(exatoFornecedorJRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(tooltipLabel3)))
+                        .addGap(5, 5, 5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tooltipLabel3)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(786, 530));
+        setSize(new java.awt.Dimension(800, 600));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -210,14 +215,13 @@ public static void main(String args[]) {
     });
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JRadioButton esquerdaFornecedorJRadioButton;
     private javax.swing.JRadioButton exatoFornecedorJRadioButton;
     private javax.swing.JRadioButton exatoFornecedorJRadioButton1;
     private javax.swing.JRadioButton exatoFornecedorJRadioButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.ButtonGroup pesquisaButtonGroup;
     private javax.swing.JTable pesquisaJTable;
     private javax.swing.JTextField pesquisaTextField;
     private javax.swing.JLabel tooltipLabel;
