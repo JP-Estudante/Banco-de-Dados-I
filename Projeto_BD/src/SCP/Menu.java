@@ -22,9 +22,9 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         sistemaJMenu = new javax.swing.JMenu();
         importarJMenu = new javax.swing.JMenuItem();
-        contasJMenu = new javax.swing.JMenuItem();
         pesquisaJMenu = new javax.swing.JMenuItem();
         configJMenu = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Controle de Pagamentos");
@@ -44,12 +44,8 @@ public class Menu extends javax.swing.JFrame {
         });
         sistemaJMenu.add(importarJMenu);
 
-        contasJMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        contasJMenu.setText("Contas a pagar ");
-        sistemaJMenu.add(contasJMenu);
-
         pesquisaJMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        pesquisaJMenu.setText("Pesquisa");
+        pesquisaJMenu.setText("Pesquisar Contas");
         pesquisaJMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pesquisaJMenuActionPerformed(evt);
@@ -60,6 +56,10 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(sistemaJMenu);
 
         configJMenu.setText("Configurações");
+
+        jMenuItem1.setText("Alterar Senha");
+        configJMenu.add(jMenuItem1);
+
         jMenuBar1.add(configJMenu);
 
         setJMenuBar(jMenuBar1);
@@ -84,6 +84,8 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void importarJMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarJMenuActionPerformed
         MenuImportar mi = new MenuImportar();
         mi.setVisible(true);
@@ -114,9 +116,9 @@ public static void main(String[] args) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLogoJLabel;
     private javax.swing.JMenu configJMenu;
-    private javax.swing.JMenuItem contasJMenu;
     private javax.swing.JMenuItem importarJMenu;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem pesquisaJMenu;
     private javax.swing.JMenu sistemaJMenu;
     // End of variables declaration//GEN-END:variables

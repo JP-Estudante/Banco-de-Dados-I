@@ -14,6 +14,22 @@ public class Pesquisa extends javax.swing.JFrame {
     public Pesquisa() {
         initComponents();
 
+        
+        // Adiciona o ouvinte de teclado à janela
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Verifica se a tecla pressionada é "Esc"
+                if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+                    // Fecha a janela
+                    dispose();
+                }
+            }
+        });
+        
+         // Define o foco na janela para que ela possa receber eventos de teclado
+        setFocusable(true);
+        requestFocusInWindow();
     }
 
     @SuppressWarnings("unchecked")
@@ -39,7 +55,6 @@ public class Pesquisa extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Pesquisa");
         setAutoRequestFocus(false);
-        setBackground(new java.awt.Color(35, 35, 35));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);

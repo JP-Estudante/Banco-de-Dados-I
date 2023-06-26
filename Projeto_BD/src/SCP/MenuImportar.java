@@ -1,6 +1,7 @@
 package SCP;
 
 import com.formdev.flatlaf.IntelliJTheme;
+import java.awt.event.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -18,16 +19,32 @@ import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-
 public class MenuImportar extends javax.swing.JFrame {
 
-   private String caminhoArquivo;
-   
+    private String caminhoArquivo;
+
     public MenuImportar() {
         initComponents();
+        
+                // Adiciona o ouvinte de teclado à janela
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Verifica se a tecla pressionada é "Esc"
+                if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+                    // Fecha a janela
+                    dispose();
+                }
+            }
+        });
+        
+                // Define o foco na janela para que ela possa receber eventos de teclado
+        setFocusable(true);
+        requestFocusInWindow();
     }
     
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -35,12 +52,12 @@ public class MenuImportar extends javax.swing.JFrame {
         tooltipLabel = new javax.swing.JLabel();
         vencimentoLabel = new javax.swing.JLabel();
         razãoSocialJLabel = new javax.swing.JLabel();
-        nomeFantasiaJLabel = new javax.swing.JLabel();
+        fornecedorJLabel = new javax.swing.JLabel();
         importarXMLButton = new javax.swing.JButton();
         importarLoteButton = new javax.swing.JButton();
         valorTotalTextField = new javax.swing.JTextField();
         razãoSocialJTextField = new javax.swing.JTextField();
-        nomeFantasiaJTextField1 = new javax.swing.JTextField();
+        fornecedorJTextField1 = new javax.swing.JTextField();
         ufJLabel = new javax.swing.JLabel();
         ufJTextField = new javax.swing.JTextField();
         vencimentoJComboBox = new javax.swing.JComboBox<>();
@@ -48,6 +65,7 @@ public class MenuImportar extends javax.swing.JFrame {
         nParcelasJTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu Importar");
         setName("importFrame"); // NOI18N
         setResizable(false);
         setSize(new java.awt.Dimension(400, 400));
@@ -62,7 +80,7 @@ public class MenuImportar extends javax.swing.JFrame {
 
         razãoSocialJLabel.setText("Razão Social:");
 
-        nomeFantasiaJLabel.setText("Nome Fantasia:");
+        fornecedorJLabel.setText("Fornecedor:");
 
         importarXMLButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/importIcon.png"))); // NOI18N
         importarXMLButton.setText("Importar XML");
@@ -86,9 +104,9 @@ public class MenuImportar extends javax.swing.JFrame {
             }
         });
 
-        nomeFantasiaJTextField1.addActionListener(new java.awt.event.ActionListener() {
+        fornecedorJTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeFantasiaJTextField1ActionPerformed(evt);
+                fornecedorJTextField1ActionPerformed(evt);
             }
         });
 
@@ -109,11 +127,11 @@ public class MenuImportar extends javax.swing.JFrame {
                         .addComponent(importarXMLButton)
                         .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nomeFantasiaJLabel)
+                            .addComponent(fornecedorJLabel)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nomeFantasiaJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fornecedorJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(valorTotalLabel)
@@ -132,50 +150,55 @@ public class MenuImportar extends javax.swing.JFrame {
                         .addComponent(tooltipLabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(razãoSocialJLabel)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vencimentoLabel)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(vencimentoLabel)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(vencimentoJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(razãoSocialJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(vencimentoJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ufJLabel)
-                        .addGap(22, 22, 22))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(ufJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(razãoSocialJLabel)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(razãoSocialJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ufJLabel)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(ufJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(66, 66, 66))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(importarXMLButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(importarXMLButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(fornecedorJLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fornecedorJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(ufJLabel)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(nomeFantasiaJLabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nomeFantasiaJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(22, 22, 22)
+                            .addComponent(ufJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(razãoSocialJLabel)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(razãoSocialJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(ufJLabel)
-                            .addGap(32, 32, 32)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(ufJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(razãoSocialJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(vencimentoLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(vencimentoJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,34 +215,41 @@ public class MenuImportar extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(valorTotalLabel)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(valorTotalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(vencimentoLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vencimentoJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(valorTotalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(795, 214));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
-    //TextField para o valor do arquivo importado
+
+    private void fornecedorJTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fornecedorJTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fornecedorJTextField1ActionPerformed
+
     private void valorTotalTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valorTotalTextFieldActionPerformed
+        // TODO add your handling code here:
     }//GEN-LAST:event_valorTotalTextFieldActionPerformed
 
     private void importarLoteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarLoteButtonActionPerformed
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_importarLoteButtonActionPerformed
 
     private void importarXMLButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarXMLButtonActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        int resultado = fileChooser.showOpenDialog(this);
 
+        if (resultado == JFileChooser.APPROVE_OPTION) {
+        // Um arquivo foi selecionado
+        File arquivoSelecionado = fileChooser.getSelectedFile();
+        
+        // Puxar as informações do arquivo xml
+        // ...
+
+        // Exiba uma mensagem ou realize outras ações conforme necessário
+        JOptionPane.showMessageDialog(this, "Arquivo selecionado: " + arquivoSelecionado.getAbsolutePath());
+    }
     }//GEN-LAST:event_importarXMLButtonActionPerformed
-
-    private void nomeFantasiaJTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeFantasiaJTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeFantasiaJTextField1ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -228,14 +258,14 @@ public class MenuImportar extends javax.swing.JFrame {
             }
         });
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fornecedorJLabel;
+    private javax.swing.JTextField fornecedorJTextField1;
     private javax.swing.JButton importarLoteButton;
     private javax.swing.JButton importarXMLButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField nParcelasJTextField;
-    private javax.swing.JLabel nomeFantasiaJLabel;
-    private javax.swing.JTextField nomeFantasiaJTextField1;
     private javax.swing.JLabel razãoSocialJLabel;
     private javax.swing.JTextField razãoSocialJTextField;
     private javax.swing.JLabel tooltipLabel;
