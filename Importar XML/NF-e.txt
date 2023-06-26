@@ -1,0 +1,8 @@
+<nDup> </nDup> -- Número de parcelas
+<dVenc> </dVenc> -- Data de vencimento
+<vDup> </vDup> -- Valor de cada parcela
+<xNome> </xNome> -- Razão social
+<xFant> </xFant> -- Nome fantasia
+<UF> </UF> -- UF da NF-e
+
+Fazer o <vDup> * <nDup> = valor total da NF-e

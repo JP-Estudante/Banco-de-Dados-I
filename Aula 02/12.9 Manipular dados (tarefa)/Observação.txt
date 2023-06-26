@@ -1,0 +1,7 @@
+Observação: 
+
+Para excluir as cidades de Soledade e Selbach, 
+é necessário garantir que não existam registros 
+relacionados a essas cidades na tabela Pessoa. 
+Caso contrário, ocorrerá um erro de violação de 
+integridade referencial.
