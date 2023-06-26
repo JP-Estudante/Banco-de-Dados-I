@@ -25,6 +25,7 @@ public class Menu extends javax.swing.JFrame {
         pesquisaJMenu = new javax.swing.JMenuItem();
         configJMenu = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        notificaçãoJMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Controle de Pagamentos");
@@ -60,6 +61,14 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem1.setText("Alterar Senha");
         configJMenu.add(jMenuItem1);
 
+        notificaçãoJMenuItem.setText("Notificações");
+        notificaçãoJMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notificaçãoJMenuItemActionPerformed(evt);
+            }
+        });
+        configJMenu.add(notificaçãoJMenuItem);
+
         jMenuBar1.add(configJMenu);
 
         setJMenuBar(jMenuBar1);
@@ -85,7 +94,6 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    
     private void importarJMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarJMenuActionPerformed
         MenuImportar mi = new MenuImportar();
         mi.setVisible(true);
@@ -95,8 +103,12 @@ public class Menu extends javax.swing.JFrame {
         Pesquisa search = new Pesquisa();
         search.setVisible(true);
     }//GEN-LAST:event_pesquisaJMenuActionPerformed
-   
 
+    private void notificaçãoJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificaçãoJMenuItemActionPerformed
+        Notificacao notificacao = new Notificacao();
+        notificacao.setVisible(true);
+    }//GEN-LAST:event_notificaçãoJMenuItemActionPerformed
+   
 public static void main(String[] args) {
     try {
         FlatDarkLaf.setup();
@@ -119,6 +131,7 @@ public static void main(String[] args) {
     private javax.swing.JMenuItem importarJMenu;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem notificaçãoJMenuItem;
     private javax.swing.JMenuItem pesquisaJMenu;
     private javax.swing.JMenu sistemaJMenu;
     // End of variables declaration//GEN-END:variables

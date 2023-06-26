@@ -43,6 +43,14 @@
                 <Property name="text" type="java.lang.String" value="Alterar Senha"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="notifica&#xe7;&#xe3;oJMenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Notifica&#xe7;&#xf5;es"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="notifica&#xe7;&#xe3;oJMenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
       </SubComponents>
