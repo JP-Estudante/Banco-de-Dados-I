@@ -9,7 +9,7 @@ public class ExtractParcelasNFe {
     public static void main(String[] args) {
         try {
             // Carregar o arquivo XML da NF-e
-            File xmlFile = new File("CALCADOS RAMARIM LTDA.xml");
+            File xmlFile = new File("Importar XML\\CALCADOS RAMARIM LTDA.xml");
 
             // Criar uma instância do DocumentBuilder
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();

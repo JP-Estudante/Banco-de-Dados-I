@@ -49,15 +49,7 @@ public class ParcelasComboBoxExample extends JFrame {
         parcelas.add("10/10/2023");
         parcelas.add("10/11/2023");
         parcelas.add("10/12/2023");
-
-
-        10/06/2023
-        10/07/2023
-        10/08/2023
-        10/09/2023
-        10/10/2023
-        10/11/2023
-        10/12/2023
+        
         return parcelas;
     }
 
