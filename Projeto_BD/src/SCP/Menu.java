@@ -4,10 +4,10 @@ import com.formdev.flatlaf.*;
 import javax.swing.*;
 
 public class Menu extends javax.swing.JFrame {
-
+    
     public Menu() {
         initComponents();
-
+        
         // Configura a janela para tela cheia
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
@@ -18,6 +18,7 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backgroundMenuJPanel = new javax.swing.JPanel();
         backgroundLogoJLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         sistemaJMenu = new javax.swing.JMenu();
@@ -31,8 +32,27 @@ public class Menu extends javax.swing.JFrame {
         setTitle("Sistema de Controle de Pagamentos");
         setExtendedState(6);
 
+        backgroundMenuJPanel.setBackground(new java.awt.Color(22, 22, 22));
+
         backgroundLogoJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SCP/resources/Background Logo.png"))); // NOI18N
         backgroundLogoJLabel.setText("jLabel1");
+
+        javax.swing.GroupLayout backgroundMenuJPanelLayout = new javax.swing.GroupLayout(backgroundMenuJPanel);
+        backgroundMenuJPanel.setLayout(backgroundMenuJPanelLayout);
+        backgroundMenuJPanelLayout.setHorizontalGroup(
+            backgroundMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundMenuJPanelLayout.createSequentialGroup()
+                .addContainerGap(409, Short.MAX_VALUE)
+                .addComponent(backgroundLogoJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+        );
+        backgroundMenuJPanelLayout.setVerticalGroup(
+            backgroundMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundMenuJPanelLayout.createSequentialGroup()
+                .addContainerGap(406, Short.MAX_VALUE)
+                .addComponent(backgroundLogoJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
 
         sistemaJMenu.setText("Sistema");
 
@@ -77,17 +97,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(378, Short.MAX_VALUE)
-                .addComponent(backgroundLogoJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+            .addComponent(backgroundMenuJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(364, Short.MAX_VALUE)
-                .addComponent(backgroundLogoJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+            .addComponent(backgroundMenuJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -105,8 +119,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_pesquisaJMenuActionPerformed
 
     private void notificaçãoJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificaçãoJMenuItemActionPerformed
-        Notificacao notificacao = new Notificacao();
-        notificacao.setVisible(true);
+        ConfigNotificações email = new ConfigNotificações();
+        email.setVisible(true);
     }//GEN-LAST:event_notificaçãoJMenuItemActionPerformed
    
 public static void main(String[] args) {
@@ -116,7 +130,7 @@ public static void main(String[] args) {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new Menu().setVisible(true);    
             }
         });
     } catch (Exception e) {
@@ -124,9 +138,9 @@ public static void main(String[] args) {
     }
 }
 
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLogoJLabel;
+    private javax.swing.JPanel backgroundMenuJPanel;
     private javax.swing.JMenu configJMenu;
     private javax.swing.JMenuItem importarJMenu;
     private javax.swing.JMenuBar jMenuBar1;

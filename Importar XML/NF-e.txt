@@ -6,3 +6,5 @@
 <UF> </UF> -- UF da NF-e
 
 Fazer o <vDup> * <nDup> = valor total da NF-e
+
+Pegar o num da NF-e e verificar se ja foi importada

@@ -1,40 +1,28 @@
 package SCP;
 
-import com.formdev.flatlaf.IntelliJTheme;
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class Pesquisa extends javax.swing.JFrame {
 
-    private JPanel titlePanel;
-    private JLabel titleLabel;
-    private MouseAdapter mouseAdapter;
-
     public Pesquisa() {
         initComponents();
-
-        
-        // Adiciona o ouvinte de teclado à janela
-        addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                // Verifica se a tecla pressionada é "Esc"
-                if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-                    // Fecha a janela
-                    dispose();
-                }
-            }
-        });
-        
-         // Define o foco na janela para que ela possa receber eventos de teclado
-        setFocusable(true);
-        requestFocusInWindow();
     }
 
+    public void controlaEsc() {
+        KeyStroke ks = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, true);
+
+        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(ks, "esc");
+        getRootPane().getActionMap().put("esc", new AbstractAction() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                dispose();
+            }
+        });
+    }
+    
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -58,6 +46,11 @@ public class Pesquisa extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                controlaEsc(evt);
+            }
+        });
 
         pesquisaButtonGroup.add(exataDataJRadioButton);
         exataDataJRadioButton.setText("DD/MM/AA <--");
@@ -228,6 +221,10 @@ public class Pesquisa extends javax.swing.JFrame {
     private void adianteDataJRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adianteDataJRadioButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_adianteDataJRadioButtonActionPerformed
+
+    private void controlaEsc(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_controlaEsc
+        controlaEsc();
+    }//GEN-LAST:event_controlaEsc
 
     public static void main(String args[]) {
         SwingUtilities.invokeLater(() -> {
