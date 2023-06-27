@@ -8,7 +8,7 @@ public class Main {
             public void run() {
                 
                 // Configuração do tema para a TelaLogin e Menu
-                //FlatDarkLaf.setup();
+                FlatDarkLaf.setup();
 
                 TelaLogin telaLogin = new TelaLogin();
                 
