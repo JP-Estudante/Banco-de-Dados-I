@@ -1,14 +1,22 @@
 package SCP;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
+import java.sql.*;
 
 public class AdicionarEmail extends javax.swing.JFrame {
 
     public AdicionarEmail() {
         initComponents();
-        
-                // Adiciona o ouvinte de teclado à janela
+
+        gravarJButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String email = adicionarEmailJTextField.getText();
+                salvarEmailNoBanco(email);
+            }
+        });
+
+        // Adiciona o ouvinte de teclado à janela
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -19,15 +27,15 @@ public class AdicionarEmail extends javax.swing.JFrame {
                 }
             }
         });
-        
-         // Define o foco na janela para que ela possa receber eventos de teclado
+
+        // Define o foco na janela para que ela possa receber eventos de teclado
         setFocusable(true);
         requestFocusInWindow();
     }
 
-    
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         adicionarEmailJTextField = new javax.swing.JTextField();
@@ -49,38 +57,88 @@ public class AdicionarEmail extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addContainerGap(206, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(gravarJButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sairJButton))
-                    .addComponent(adicionarEmailJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel1)
+                                .addContainerGap(206, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(gravarJButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(sairJButton))
+                                        .addComponent(adicionarEmailJTextField, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(32, 32, 32)));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(adicionarEmailJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(gravarJButton)
-                    .addComponent(sairJButton))
-                .addGap(26, 26, 26))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(adicionarEmailJTextField, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32,
+                                        Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(gravarJButton)
+                                        .addComponent(sairJButton))
+                                .addGap(26, 26, 26)));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void salvarEmailNoBanco(String email) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+        try {
+            // Estabelecer a conexção com o banco de dados
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/paymanage_bd", "postgres",
+                    "141171");
+
+            // Define a consulta SQL para inserir o Email
+            String SQL = "INSERT INTO Configuracao (email_alerta) VALUES (?)";
+
+            // Preparar a declaração com a consulta SQL
+            statement = connection.prepareStatement(SQL);
+
+            // Define o valor do paramentro na consulta
+            statement.setString(1, email);
+
+            // Executa a consulta
+            statement.executeUpdate();
+
+            // Exibe uma mensagem de sucesso
+            System.out.println("Email adicionado");
+        } catch (SQLException ex) {
+            // Trata os erros de conexção com o banco de dados
+            ex.printStackTrace();
+
+        } finally {
+
+            // Fecha os recursos (statemment connection) em caso de sucesso ou erro
+            if (statement != null) {
+                try {
+                    statement.close();
+
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+    }
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
