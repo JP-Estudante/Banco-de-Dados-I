@@ -49,4 +49,4 @@ CREATE TABLE Usuario(
 CREATE TABLE Configuracao(
 	codigo SERIAL PRIMARY KEY,
 	email_alerta VARCHAR(100)
-); 
+);
