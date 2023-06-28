@@ -1,11 +1,11 @@
-CREATE TABLE estado(
+CREATE TABLE Estado(
 	uf CHAR(2) NOT NULL,
 	nome_estado	VARCHAR(50),
 	
 	CONSTRAINT pk_estado PRIMARY KEY (uf)
 )
 
-CREATE TABLE cidade(
+CREATE TABLE Cidade(
 	codigo SERIAL NOT NULL,
 	nome_cidade VARCHAR(80) NOT NULL,
 	cod_estado CHAR(2),
@@ -16,7 +16,7 @@ CREATE TABLE cidade(
 	(cod_estado) REFERENCES estado(uf)
 )
 
-CREATE TABLE fornecedor(
+CREATE TABLE Fornecedor(
 	id_fornecedor SERIAL NOT NULL,
 	nome_fantasia VARCHAR(80),
 	CNPJ CHAR(14),
@@ -29,7 +29,7 @@ CREATE TABLE NFe(
 	codigo SERIAL PRIMARY KEY,
 	chave_acesso CHAR(44),
 	valor_total DECIMAL(12, 2) NOT NULL
-);
+)
 
 CREATE TABLE Parcela (
     codigo SERIAL PRIMARY KEY,
@@ -38,5 +38,15 @@ CREATE TABLE Parcela (
     valor DECIMAL(12, 2) NOT NULL,
 
     FOREIGN KEY (cod_nfe) REFERENCES NFe (codigo)
-);
+)
 
+CREATE TABLE Usuario(
+	codigo SERIAL PRIMARY KEY,
+	usuario VARCHAR(10),
+	senha VARCHAR(10)
+)
+
+CREATE TABLE Configuracao(
+	codigo SERIAL PRIMARY KEY,
+	email_alerta VARCHAR(100)
+);
