@@ -49,7 +49,7 @@ public class Menu extends javax.swing.JFrame {
         backgroundMenuJPanelLayout.setVerticalGroup(
             backgroundMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundMenuJPanelLayout.createSequentialGroup()
-                .addContainerGap(406, Short.MAX_VALUE)
+                .addContainerGap(351, Short.MAX_VALUE)
                 .addComponent(backgroundLogoJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
