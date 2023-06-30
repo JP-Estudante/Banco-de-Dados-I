@@ -29,21 +29,9 @@ public class MenuImportar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        valorTotalLabel = new javax.swing.JLabel();
-        vencimentoLabel = new javax.swing.JLabel();
-        razãoSocialJLabel = new javax.swing.JLabel();
-        fornecedorJLabel = new javax.swing.JLabel();
-        gravarJButton = new javax.swing.JButton();
-        valorTotalTextField = new javax.swing.JTextField();
-        razãoSocialJTextField = new javax.swing.JTextField();
-        fornecedorJTextField1 = new javax.swing.JTextField();
-        ufJLabel = new javax.swing.JLabel();
-        ufJTextField = new javax.swing.JTextField();
-        vencimentoJComboBox = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        nParcelasJTextField = new javax.swing.JTextField();
-        importarXMLJButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        caminhoXMLJTextField = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu Importar");
@@ -57,220 +45,57 @@ public class MenuImportar extends javax.swing.JFrame {
             }
         });
 
-        valorTotalLabel.setText("Valor Total NF-e:");
+        jButton1.setText("Procurar");
 
-        vencimentoLabel.setText("Vencimento das Parcelas:");
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        razãoSocialJLabel.setText("Razão Social:");
-
-        fornecedorJLabel.setText("Fornecedor:");
-
-        gravarJButton.setBackground(new java.awt.Color(30, 30, 30));
-        gravarJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/gravarIcon.png"))); // NOI18N
-        gravarJButton.setText("Gravar");
-        gravarJButton.setToolTipText("");
-        gravarJButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                gravarJButtonMouseClicked(evt);
-            }
-        });
-        gravarJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gravarJButtonActionPerformed(evt);
-            }
-        });
-
-        valorTotalTextField.setBackground(new java.awt.Color(30, 30, 30));
-        valorTotalTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                valorTotalTextFieldActionPerformed(evt);
-            }
-        });
-
-        razãoSocialJTextField.setBackground(new java.awt.Color(30, 30, 30));
-
-        fornecedorJTextField1.setBackground(new java.awt.Color(30, 30, 30));
-        fornecedorJTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fornecedorJTextField1ActionPerformed(evt);
-            }
-        });
-
-        ufJLabel.setText("UF:");
-
-        ufJTextField.setBackground(new java.awt.Color(30, 30, 30));
-
-        vencimentoJComboBox.setBackground(new java.awt.Color(30, 30, 30));
-        vencimentoJComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10/06/2023", "10/07/2023", "10/08/2023", "10/09/2023", "10/10/2023", "10/11/2023", "10/12/2023" }));
-        vencimentoJComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vencimentoJComboBoxActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Parcelas:");
-
-        nParcelasJTextField.setBackground(new java.awt.Color(30, 30, 30));
-
-        importarXMLJButton.setBackground(new java.awt.Color(30, 30, 30));
-        importarXMLJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/importIcon.png"))); // NOI18N
-        importarXMLJButton.setText("Importar XML");
-        importarXMLJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                importarXMLJButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("adicionar caminho");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 156, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(gravarJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(fornecedorJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(fornecedorJLabel))
-                .addGap(75, 75, 75)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(razãoSocialJLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(razãoSocialJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ufJLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(ufJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(66, 66, 66))
+                .addComponent(caminhoXMLJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(12, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(234, 234, 234)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(valorTotalLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(valorTotalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(nParcelasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addGap(29, 29, 29)))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(vencimentoLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(vencimentoJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jLabel2)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(44, 44, 44)
-                    .addComponent(importarXMLJButton)
-                    .addContainerGap(598, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(1, 1, 1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(fornecedorJLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fornecedorJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ufJLabel)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(22, 22, 22)
-                            .addComponent(ufJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(razãoSocialJLabel)
-                            .addGap(1, 1, 1)
-                            .addComponent(razãoSocialJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gravarJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(vencimentoLabel)
-                            .addComponent(jLabel1))
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(vencimentoJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nParcelasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(valorTotalLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(valorTotalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(29, 29, 29)
-                    .addComponent(importarXMLJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(125, Short.MAX_VALUE)))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(caminhoXMLJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(795, 214));
+        setSize(new java.awt.Dimension(362, 327));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
 
     
-    private void fornecedorJTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fornecedorJTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fornecedorJTextField1ActionPerformed
-
-    private void valorTotalTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valorTotalTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_valorTotalTextFieldActionPerformed
-
-    private void gravarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gravarJButtonActionPerformed
-
-    }//GEN-LAST:event_gravarJButtonActionPerformed
-
     private void controlaEsc(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_controlaEsc
         controlaEsc();
     }//GEN-LAST:event_controlaEsc
-
-    private void importarXMLJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarXMLJButtonActionPerformed
-        JFileChooser fileChooser = new JFileChooser();
-        int resultado = fileChooser.showOpenDialog(this);
-
-        if (resultado == JFileChooser.APPROVE_OPTION) {
-        // Um arquivo foi selecionado
-        File arquivoSelecionado = fileChooser.getSelectedFile();
-        
-        // Puxar as informações do arquivo xml
-        // ...
-
-        // Exiba uma mensagem ou realize outras ações conforme necessário
-        JOptionPane.showMessageDialog(this, "Arquivo selecionado: " + arquivoSelecionado.getAbsolutePath());
-        }
-    }//GEN-LAST:event_importarXMLJButtonActionPerformed
-
-    private void gravarJButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gravarJButtonMouseClicked
-    }//GEN-LAST:event_gravarJButtonMouseClicked
-
-    private void vencimentoJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vencimentoJComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vencimentoJComboBoxActionPerformed
     
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -281,20 +106,8 @@ public class MenuImportar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel fornecedorJLabel;
-    private javax.swing.JTextField fornecedorJTextField1;
-    private javax.swing.JButton gravarJButton;
-    private javax.swing.JButton importarXMLJButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField nParcelasJTextField;
-    private javax.swing.JLabel razãoSocialJLabel;
-    private javax.swing.JTextField razãoSocialJTextField;
-    private javax.swing.JLabel ufJLabel;
-    private javax.swing.JTextField ufJTextField;
-    private javax.swing.JLabel valorTotalLabel;
-    private javax.swing.JTextField valorTotalTextField;
-    private javax.swing.JComboBox<String> vencimentoJComboBox;
-    private javax.swing.JLabel vencimentoLabel;
+    private javax.swing.JTextField caminhoXMLJTextField;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

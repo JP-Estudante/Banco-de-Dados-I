@@ -1,5 +1,5 @@
 CREATE TABLE Estado(
-	codigo CHAR(2) NOT NULL,
+	codigo SERIAL NOT NULL,
 	uf CHAR(2) NOT NULL,
 	nome_estado VARCHAR(50),
 	
@@ -7,9 +7,10 @@ CREATE TABLE Estado(
 );
 
 CREATE TABLE Cidade(
-	codigo CHAR(2) NOT NULL,
+	codigo SERIAL NOT NULL,
+	c_Mun CHAR(7) NOT NULL,
 	nome_cidade VARCHAR(80) NOT NULL,
-	cod_estado CHAR(2),
+	cod_estado INTEGER,
 	
 	CONSTRAINT pk_cidade PRIMARY KEY (codigo),
 	
@@ -21,8 +22,15 @@ CREATE TABLE Fornecedor(
 	nome_fantasia VARCHAR(80),
 	CNPJ CHAR(14),
     endereco VARCHAR(255),
-    cod_cidade CHAR(2),
+    cod_cidade INTEGER,
+	
 	FOREIGN KEY (cod_cidade) REFERENCES cidade(codigo) 
+
+	ALTER TABLE Fornecedor
+	RENAME COLUMN endereco TO municipio,
+
+	ALTER TABLE Fornecedor
+	ADD COLUMN bairro VARCHAR(60);
 );
 
 CREATE TABLE NFe(
@@ -52,6 +60,6 @@ CREATE TABLE Configuracao(
 );
 
 SELECT * 
-	FROM Configuracao
+	FROM Fornecedor
 	
 DELETE FROM Configuracao
