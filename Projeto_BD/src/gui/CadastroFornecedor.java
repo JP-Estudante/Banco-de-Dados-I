@@ -117,11 +117,11 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(municipioJLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(municipioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(municipioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -210,27 +210,13 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bairroJLabel;
-    private javax.swing.JLabel bairroJLabel1;
-    private javax.swing.JLabel bairroJLabel2;
     private javax.swing.JTextField bairroJTextField;
-    private javax.swing.JTextField bairroJTextField1;
-    private javax.swing.JTextField bairroJTextField2;
     private javax.swing.JPanel botoesJPanel;
     private javax.swing.JPanel cadastroFornecedorJPanel;
-    private javax.swing.JPanel cadastroFornecedorJPanel1;
-    private javax.swing.JPanel cadastroFornecedorJPanel2;
     private javax.swing.JFormattedTextField cnpjJFormattedTextField;
-    private javax.swing.JFormattedTextField cnpjJFormattedTextField1;
-    private javax.swing.JFormattedTextField cnpjJFormattedTextField2;
     private javax.swing.JLabel cnpjJLabel;
-    private javax.swing.JLabel cnpjJLabel1;
-    private javax.swing.JLabel cnpjJLabel2;
     private javax.swing.JLabel fornecedorJLabel;
-    private javax.swing.JLabel fornecedorJLabel1;
-    private javax.swing.JLabel fornecedorJLabel2;
     private javax.swing.JTextField fornecedorJTextField;
-    private javax.swing.JTextField fornecedorJTextField1;
-    private javax.swing.JTextField fornecedorJTextField2;
     private javax.swing.JButton gravarJButton;
     private javax.swing.JButton gravarJButton1;
     private javax.swing.JLabel jLabel1;
@@ -238,10 +224,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
     private javax.swing.JLabel municipioJLabel;
     private javax.swing.JTextField municipioJTextField;
     private javax.swing.JLabel razaoSocialJLabel;
-    private javax.swing.JLabel razaoSocialJLabel1;
-    private javax.swing.JLabel razaoSocialJLabel2;
     private javax.swing.JTextField razaoSocialJTextField;
-    private javax.swing.JTextField razaoSocialJTextField1;
-    private javax.swing.JTextField razaoSocialJTextField2;
     // End of variables declaration//GEN-END:variables
 }

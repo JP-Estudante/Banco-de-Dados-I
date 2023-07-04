@@ -168,6 +168,7 @@
           <ComponentRef name="pesquisaButtonGroup"/>
         </Property>
         <Property name="text" type="java.lang.String" value="DD/MM/AA &lt;--"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;strong&gt; &amp;rarr; Data &lt;/strong&gt;&lt;br&gt;&#xa;Exibe os resultados da data fornecida, at&#xe9; a mais antiga.&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;&#xa;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exataDataJRadioButtonActionPerformed"/>
@@ -179,6 +180,7 @@
           <ComponentRef name="pesquisaButtonGroup"/>
         </Property>
         <Property name="text" type="java.lang.String" value="--&gt; DD/MM/AA"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;strong&gt; &amp;rarr; Data &lt;/strong&gt;&lt;br&gt;&#xa;Exibe os resultados da data fornecida, at&#xe9; a mais recente.&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;&#xa;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adianteDataJRadioButtonActionPerformed"/>

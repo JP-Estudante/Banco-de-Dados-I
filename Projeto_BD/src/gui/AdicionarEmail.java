@@ -76,8 +76,6 @@ public class AdicionarEmail extends javax.swing.JFrame {
             }
         });
 
-        avisoJLabel.setText("jLabel1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,6 +122,7 @@ public class AdicionarEmail extends javax.swing.JFrame {
     private void gravarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gravarJButtonActionPerformed
         String email = adicionarEmailJTextField.getText();
         validarEmail(email);
+        ConfigNotificações puxar = new ConfigNotificações();
     }//GEN-LAST:event_gravarJButtonActionPerformed
 
     private void sairJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairJButtonActionPerformed
@@ -156,9 +155,7 @@ public class AdicionarEmail extends javax.swing.JFrame {
         }
     }
     
-     private void salvarEmailNoBanco(String email) {
-        // Verifica se o email está em branco
-            
+     private void salvarEmailNoBanco(String email) {            
             
         Connection connection = null;
         PreparedStatement statement = null;

@@ -10,6 +10,8 @@ import javax.swing.table.DefaultTableModel;
 import main.Configuracao;
 
 public class ConfigNotificações extends javax.swing.JFrame {
+    List<Configuracao> listaDeConfiguracoes = new ArrayList<>();
+    
     public ConfigNotificações() {
         initComponents();
         obterConfiguracoesDoBanco();
@@ -31,7 +33,7 @@ public class ConfigNotificações extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -51,17 +53,31 @@ public class ConfigNotificações extends javax.swing.JFrame {
         });
 
         emailJTable.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null },
-                        { null, null },
-                        { null, null }
-                },
-                new String[] {
-                        "Codigo", "Email"
-                }));
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Codigo", "Email"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(emailJTable);
 
         excluirEmailJButton.setText("Excluir Email");
+        excluirEmailJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirEmailJButtonActionPerformed(evt);
+            }
+        });
 
         adicionarEmailJButton.setText("Adicionar Email");
         adicionarEmailJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -80,34 +96,59 @@ public class ConfigNotificações extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(12, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(okJToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(adicionarEmailJButton)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(excluirEmailJButton)))
-                                .addGap(28, 28, 28)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(okJToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(adicionarEmailJButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(excluirEmailJButton)))
+                .addGap(28, 28, 28))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(excluirEmailJButton)
-                                        .addComponent(adicionarEmailJButton))
-                                .addGap(18, 18, 18)
-                                .addComponent(okJToggle)
-                                .addGap(0, 14, Short.MAX_VALUE)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(excluirEmailJButton)
+                    .addComponent(adicionarEmailJButton))
+                .addGap(18, 18, 18)
+                .addComponent(okJToggle)
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void excluirEmailJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirEmailJButtonActionPerformed
+ int Codigo, num;
+num =  emailJTable.getSelectedRow();
+Codigo = emailJTable.getSelectedColumn();
+// Estabelecer a conexão com o banco de dados (substitua com suas próprias
+        // informações de conexão)
+        String url = "jdbc:postgresql://localhost:5432/paymanage_bd";
+        String user = "postgres";
+        String password = "141171";
+
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+            // Criar a consulta SQL para obter os dados da tabela Configuracao
+            String query = "DELETE FROM Configuracao WHERE codigo=" + emailJTable.getValueAt(num, 0) + ";";
+
+            // Executar a consulta SQL e obter o resultado
+            try (Statement statement = connection.createStatement()){
+                statement.executeUpdate(query);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_excluirEmailJButtonActionPerformed
 
     private void adicionarEmailJButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_adicionarEmailJButtonActionPerformed
         AdicionarEmail addEmail = new AdicionarEmail();
@@ -122,7 +163,7 @@ public class ConfigNotificações extends javax.swing.JFrame {
         dispose();
     }
 
-    List<Configuracao> listaDeConfiguracoes = new ArrayList<>();
+   
 
     private void obterConfiguracoesDoBanco() {
         // Estabelecer a conexão com o banco de dados (substitua com suas próprias

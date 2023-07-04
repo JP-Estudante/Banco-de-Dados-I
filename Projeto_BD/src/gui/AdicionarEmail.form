@@ -101,9 +101,6 @@
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="avisoJLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

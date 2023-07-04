@@ -80,6 +80,7 @@ public class Pesquisa extends javax.swing.JFrame {
 
         pesquisaButtonGroup.add(exataDataJRadioButton);
         exataDataJRadioButton.setText("DD/MM/AA <--");
+        exataDataJRadioButton.setToolTipText("<html>\n<body>\n<strong> &rarr; Data </strong><br>\nExibe os resultados da data fornecida, até a mais antiga.\n</body>\n</html>\n");
         exataDataJRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exataDataJRadioButtonActionPerformed(evt);
@@ -88,6 +89,7 @@ public class Pesquisa extends javax.swing.JFrame {
 
         pesquisaButtonGroup.add(adianteDataJRadioButton);
         adianteDataJRadioButton.setText("--> DD/MM/AA");
+        adianteDataJRadioButton.setToolTipText("<html>\n<body>\n<strong> &rarr; Data </strong><br>\nExibe os resultados da data fornecida, até a mais recente.\n</body>\n</html>\n");
         adianteDataJRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adianteDataJRadioButtonActionPerformed(evt);
