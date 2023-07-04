@@ -73,6 +73,11 @@ public class ConfigNotificações extends javax.swing.JFrame {
         jScrollPane1.setViewportView(emailJTable);
 
         excluirEmailJButton.setText("Excluir Email");
+        excluirEmailJButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                excluirEmailJButtonMouseClicked(evt);
+            }
+        });
         excluirEmailJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 excluirEmailJButtonActionPerformed(evt);
@@ -126,29 +131,48 @@ public class ConfigNotificações extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void excluirEmailJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirEmailJButtonActionPerformed
- int Codigo, num;
-num =  emailJTable.getSelectedRow();
-Codigo = emailJTable.getSelectedColumn();
-// Estabelecer a conexão com o banco de dados (substitua com suas próprias
-        // informações de conexão)
-        String url = "jdbc:postgresql://localhost:5432/paymanage_bd";
-        String user = "postgres";
-        String password = "141171";
+        int selectedRow = emailJTable.getSelectedRow();
+        
+            //Verifica se a linha ja foi selecionada
+            if(selectedRow >= 0){
+                int codigo = (int) emailJTable.getValueAt(selectedRow, 0);
 
-        try (Connection connection = DriverManager.getConnection(url, user, password)) {
-            // Criar a consulta SQL para obter os dados da tabela Configuracao
-            String query = "DELETE FROM Configuracao WHERE codigo=" + emailJTable.getValueAt(num, 0) + ";";
+            // Estabelecer a conexão com o banco de dados
+            String url = "jdbc:postgresql://localhost:5432/paymanage_bd";
+            String user = "postgres";
+            String password = "141171";
 
-            // Executar a consulta SQL e obter o resultado
-            try (Statement statement = connection.createStatement()){
-                statement.executeUpdate(query);
+            try (Connection connection = DriverManager.getConnection(url, user, password)) {
+                // Criar a consulta SQL para obter os dados da tabela Configuracao
+                String query = "DELETE FROM Configuracao WHERE codigo=" + codigo + ";";
+
+                // Executar a consulta SQL e obter o resultado
+                try (Statement statement = connection.createStatement()){
+                    statement.executeUpdate(query);
+
+                    // Remover a linha do modelo da tabela
+                    DefaultTableModel model = (DefaultTableModel) emailJTable.getModel();
+                    model.removeRow(selectedRow);
+
+                    // Notificar a tabela sobre as alterações no modelo
+                    model.fireTableDataChanged();
+
+                // Exibe uma mensagem de sucesso
+                System.out.println("Email excluido");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }//GEN-LAST:event_excluirEmailJButtonActionPerformed
+
+    private void excluirEmailJButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_excluirEmailJButtonMouseClicked
+        // Crie um objeto DefaultTableModel para manipular os dados da tabela
+        DefaultTableModel model = (DefaultTableModel) emailJTable.getModel();  
+        model.fireTableDataChanged();            
+    }//GEN-LAST:event_excluirEmailJButtonMouseClicked
 
     private void adicionarEmailJButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_adicionarEmailJButtonActionPerformed
         AdicionarEmail addEmail = new AdicionarEmail();
@@ -200,7 +224,7 @@ Codigo = emailJTable.getSelectedColumn();
         // Crie um objeto DefaultTableModel para manipular os dados da tabela
         DefaultTableModel model = (DefaultTableModel) emailJTable.getModel();
         model.setRowCount(0); // Limpa os dados existentes na tabela
-
+        
         // Percorra os emails cadastrados e adicione-os ao modelo da tabela
         for (Configuracao configuracao : listaDeConfiguracoes) {
             Object[] rowData = { configuracao.getCodigo(), configuracao.getEmailAlerta() };

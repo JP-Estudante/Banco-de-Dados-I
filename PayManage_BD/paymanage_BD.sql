@@ -21,16 +21,11 @@ CREATE TABLE Fornecedor(
 	id_fornecedor SERIAL NOT NULL,
 	nome_fantasia VARCHAR(80),
 	CNPJ CHAR(14),
-    endereco VARCHAR(255),
+    municipio VARCHAR(255),
     cod_cidade INTEGER,
+	bairro VARCHAR(60),
 	
 	FOREIGN KEY (cod_cidade) REFERENCES cidade(codigo) 
-
-	ALTER TABLE Fornecedor
-	RENAME COLUMN endereco TO municipio,
-
-	ALTER TABLE Fornecedor
-	ADD COLUMN bairro VARCHAR(60);
 );
 
 CREATE TABLE NFe(
@@ -59,7 +54,11 @@ CREATE TABLE Configuracao(
 	email_alerta VARCHAR(100)
 );
 
-SELECT * 
-	FROM Fornecedor
-	
+SELECT *
+	FROM Configuracao
+
+-- Remove todos os registros existentes da tabela Configurações
 DELETE FROM Configuracao
+
+-- Reinicia a sequência associada à coluna codigo da tabela Configuracao
+ALTER SEQUENCE Configuracao_codigo_seq RESTART WITH 1;

@@ -123,6 +123,7 @@ public class AdicionarEmail extends javax.swing.JFrame {
         String email = adicionarEmailJTextField.getText();
         validarEmail(email);
         ConfigNotificações puxar = new ConfigNotificações();
+        
     }//GEN-LAST:event_gravarJButtonActionPerformed
 
     private void sairJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairJButtonActionPerformed
@@ -149,7 +150,7 @@ public class AdicionarEmail extends javax.swing.JFrame {
             avisoJLabel.setForeground(Color.GREEN);
             adicionarEmailJTextField.setText("");
             salvarEmailNoBanco(email);
-
+            
             return true; // Email válido, retorna true
             
         }
