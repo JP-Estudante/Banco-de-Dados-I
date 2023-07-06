@@ -119,7 +119,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_pesquisaJMenuActionPerformed
 
     private void notificaçãoJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificaçãoJMenuItemActionPerformed
-        ConfigNotificações email = new ConfigNotificações();
+        ConfigNotificacoes email = new ConfigNotificacoes();
         email.setVisible(true);
     }//GEN-LAST:event_notificaçãoJMenuItemActionPerformed
    

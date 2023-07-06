@@ -62,20 +62,19 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="municipioJTextField" alignment="0" pref="174" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="fornecedorJTextField" alignment="1" pref="160" max="32767" attributes="0"/>
-                              <Component id="fornecedorJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="bairroJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="bairroJTextField" alignment="1" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="fornecedorJTextField" alignment="1" pref="160" max="32767" attributes="0"/>
+                                  <Component id="fornecedorJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bairroJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bairroJTextField" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="municipioJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="municipioJLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="municipioJTextField" alignment="0" pref="174" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">

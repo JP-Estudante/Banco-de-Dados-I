@@ -1,7 +1,6 @@
 package gui;
 
 public class CadastroFornecedor extends javax.swing.JFrame {
-
     public CadastroFornecedor() {
         initComponents();
     }
@@ -68,17 +67,16 @@ public class CadastroFornecedor extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastroFornecedorJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(municipioJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
-                        .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(fornecedorJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                            .addComponent(fornecedorJLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bairroJLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bairroJTextField))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
-                        .addComponent(municipioJLabel)
-                        .addGap(103, 103, 103))
-                    .addComponent(municipioJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
+                        .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(fornecedorJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                .addComponent(fornecedorJLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(bairroJLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(bairroJTextField))
+                            .addComponent(municipioJLabel))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(razaoSocialJLabel)

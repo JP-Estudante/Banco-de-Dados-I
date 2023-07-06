@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,11 +14,13 @@ import java.sql.SQLException;
 
 public class AdicionarEmail extends javax.swing.JFrame {
 
-    ConfigNotificações cNotifi = new ConfigNotificações();
-
+    ConfigNotificacoes cNotifi = new ConfigNotificacoes();
+        
     public AdicionarEmail() {
         initComponents();
 
+        
+        
         gravarJButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,12 +57,6 @@ public class AdicionarEmail extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setType(java.awt.Window.Type.UTILITY);
-
-        adicionarEmailJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adicionarEmailJTextFieldActionPerformed(evt);
-            }
-        });
 
         emailJLabel.setText("Email:");
 
@@ -118,23 +116,19 @@ public class AdicionarEmail extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void gravarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gravarJButtonActionPerformed
         String email = adicionarEmailJTextField.getText();
         validarEmail(email);
-        ConfigNotificações puxar = new ConfigNotificações();
-        
+        ConfigNotificacoes puxar = new ConfigNotificacoes();      
     }//GEN-LAST:event_gravarJButtonActionPerformed
 
     private void sairJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairJButtonActionPerformed
-        dispose(); // Fecha a janela
-        cNotifi.dispose(); // Fecha a janela de Configurar Notificações
+        dispose();
+        cNotifi.setDefaultCloseOperation(cNotifi.EXIT_ON_CLOSE);
+        System.out.println("Fechada");
     }//GEN-LAST:event_sairJButtonActionPerformed
-
-    private void adicionarEmailJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarEmailJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adicionarEmailJTextFieldActionPerformed
-
+    
         
     private boolean validarEmail(String email){
         if(email.isEmpty()){
