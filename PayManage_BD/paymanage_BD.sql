@@ -18,7 +18,7 @@ CREATE TABLE Cidade(
 );
 
 CREATE TABLE Fornecedor(
-	id_fornecedor SERIAL NOT NULL,
+	id_fornecedor SERIAL PRIMARY KEY,
 	nome_fantasia VARCHAR(80),
 	CNPJ CHAR(14),
     municipio VARCHAR(255),
@@ -56,6 +56,14 @@ CREATE TABLE Configuracao(
 	codigo SERIAL PRIMARY KEY,
 	email_alerta VARCHAR(100)
 );
+
+SELECT CNPJ FROM Fornecedor
+
+SELECT * FROM Fornecedor WHERE cnpj = '88104328001502'
+
+INSERT INTO fornecedor(cnpj) VALUES ('88104328001502'); 
+
+DELETE FROM Fornecedor
 
 SELECT *
 	FROM Configuracao
