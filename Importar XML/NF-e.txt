@@ -8,3 +8,11 @@
 Fazer o <vDup> * <nDup> = valor total da NF-e
 
 Pegar o num da NF-e e verificar se ja foi importada
+
+O cálculo dos dígitos verificadores do CNPJ é feito da seguinte maneira:
+
+Os primeiros 12 dígitos do CNPJ são multiplicados por pesos específicos, começando com o peso 5 e diminuindo de 1 a cada dígito seguinte. O último dígito é multiplicado por 2.
+Os resultados das multiplicações são somados.
+O resultado da soma é dividido por 11.
+O dígito verificador é calculado como 11 menos o resto da divisão. Se o resto for 0 ou 1, o dígito verificador é 0. Caso contrário, é o resultado da subtração.
+O mesmo processo é repetido considerando os primeiros 13 dígitos do CNPJ, para calcular o segundo dígito verificador.
