@@ -136,7 +136,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         });
 
         gravarJButton1.setBackground(new java.awt.Color(25, 25, 25));
-        gravarJButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/gravarIcon.png"))); // NOI18N
+        gravarJButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/gravarIcon(1).png"))); // NOI18N
         gravarJButton1.setText("Gravar");
         gravarJButton1.setToolTipText("");
         gravarJButton1.addActionListener(new java.awt.event.ActionListener() {

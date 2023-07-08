@@ -171,7 +171,7 @@
               <Color blue="19" green="19" red="19" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/icons/gravarIcon.png"/>
+              <Image iconType="3" name="/resources/icons/gravarIcon(1).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Gravar"/>
           </Properties>

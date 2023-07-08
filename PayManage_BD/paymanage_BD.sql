@@ -39,7 +39,10 @@ CREATE TABLE Parcela (
     cod_nfe INTEGER NOT NULL,
     numero_parcela INTEGER NOT NULL,
     valor DECIMAL(12, 2) NOT NULL,
-
+	
+	ALTER TABLE Parcela 
+	ADD COLUMN data_venc DATE NOT NULL  --Adicionado nova coluna data de vencimento
+	
     FOREIGN KEY (cod_nfe) REFERENCES NFe (codigo)
 );
 

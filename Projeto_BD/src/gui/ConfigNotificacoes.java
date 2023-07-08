@@ -95,7 +95,7 @@ public class ConfigNotificacoes extends javax.swing.JFrame {
         adicionarEmailJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
         gravarJButton.setBackground(new java.awt.Color(25, 25, 25));
-        gravarJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/gravarIcon.png"))); // NOI18N
+        gravarJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/gravarIcon(1).png"))); // NOI18N
         gravarJButton.setText("Gravar");
         gravarJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -370,7 +370,7 @@ public class ConfigNotificacoes extends javax.swing.JFrame {
                     System.out.println("Email excluído");
                     
                     avisoJLabel.setText("Email excluído");
-                    avisoJLabel.setForeground(Color.YELLOW);
+                    avisoJLabel.setForeground(Color.RED);
 
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -399,7 +399,7 @@ public class ConfigNotificacoes extends javax.swing.JFrame {
     private boolean validarEmail(String email){
         if(email.isEmpty()){
             avisoJLabel.setText("Campo em branco");
-            avisoJLabel.setForeground(Color.RED);
+            avisoJLabel.setForeground(Color.YELLOW);
 
             return false; // Email em branco, retorna false
         } else{
