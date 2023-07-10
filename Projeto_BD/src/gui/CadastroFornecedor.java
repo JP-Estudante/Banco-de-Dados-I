@@ -69,7 +69,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                         codMunicipioJTextField.setText(cMun);
                         cnpjJFormattedTextField.setText(cnpj);
                         razaoSocialJTextField.setText(xNome);
-                        cUFJTextField.setText(cUF);
+                        UFJTextField.setText(cUF);
 
                 } catch (Exception ex) {
                         ex.printStackTrace();
@@ -79,310 +79,224 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // Code">//GEN-BEGIN:initComponents
-        private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-                cadastroFornecedorJPanel = new javax.swing.JPanel();
-                razaoSocialJLabel = new javax.swing.JLabel();
-                fornecedorJLabel = new javax.swing.JLabel();
-                fornecedorJTextField = new javax.swing.JTextField();
-                razaoSocialJTextField = new javax.swing.JTextField();
-                cnpjJLabel = new javax.swing.JLabel();
-                cnpjJFormattedTextField = new javax.swing.JFormattedTextField();
-                bairroJTextField = new javax.swing.JTextField();
-                bairroJLabel = new javax.swing.JLabel();
-                municipioJTextField = new javax.swing.JTextField();
-                municipioJLabel = new javax.swing.JLabel();
-                jLabel1 = new javax.swing.JLabel();
-                codMunicipioJTextField = new javax.swing.JTextField();
-                botoesJPanel = new javax.swing.JPanel();
-                sairJButton = new javax.swing.JButton();
-                gravarJButton = new javax.swing.JButton();
-                cUFJTextField = new javax.swing.JTextField();
+        cadastroFornecedorJPanel = new javax.swing.JPanel();
+        razaoSocialJLabel = new javax.swing.JLabel();
+        fornecedorJLabel = new javax.swing.JLabel();
+        fornecedorJTextField = new javax.swing.JTextField();
+        razaoSocialJTextField = new javax.swing.JTextField();
+        cnpjJLabel = new javax.swing.JLabel();
+        cnpjJFormattedTextField = new javax.swing.JFormattedTextField();
+        bairroJTextField = new javax.swing.JTextField();
+        bairroJLabel = new javax.swing.JLabel();
+        municipioJTextField = new javax.swing.JTextField();
+        municipioJLabel = new javax.swing.JLabel();
+        codMunicipioJLabel = new javax.swing.JLabel();
+        codMunicipioJTextField = new javax.swing.JTextField();
+        UFJTextField = new javax.swing.JTextField();
+        UFjLabel = new javax.swing.JLabel();
+        botoesJPanel = new javax.swing.JPanel();
+        sairJButton = new javax.swing.JButton();
+        gravarJButton = new javax.swing.JButton();
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-                setTitle("Cadastro de Pessoa");
-                setResizable(false);
-                setType(java.awt.Window.Type.UTILITY);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Pessoa");
+        setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
 
-                cadastroFornecedorJPanel
-                                .setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastrar Fornecedor"));
+        cadastroFornecedorJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastrar Fornecedor"));
 
-                razaoSocialJLabel.setText("Razão Social:");
+        razaoSocialJLabel.setText("Razão Social:");
 
-                fornecedorJLabel.setText("Fornecedor:");
+        fornecedorJLabel.setText("Fornecedor:");
 
-                fornecedorJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        fornecedorJTextField.setEditable(false);
+        fornecedorJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                razaoSocialJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        razaoSocialJTextField.setEditable(false);
+        razaoSocialJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                cnpjJLabel.setText("CNPJ:");
+        cnpjJLabel.setText("CNPJ:");
 
-                cnpjJFormattedTextField.setBackground(new java.awt.Color(25, 25, 25));
-                try {
-                        cnpjJFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-                                        new javax.swing.text.MaskFormatter("##.###.###/####-##")));
-                } catch (java.text.ParseException ex) {
-                        ex.printStackTrace();
-                }
+        cnpjJFormattedTextField.setEditable(false);
+        cnpjJFormattedTextField.setBackground(new java.awt.Color(25, 25, 25));
+        try {
+            cnpjJFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
-                bairroJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        bairroJTextField.setEditable(false);
+        bairroJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                bairroJLabel.setText("Bairro:");
+        bairroJLabel.setText("Bairro:");
 
-                municipioJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        municipioJTextField.setEditable(false);
+        municipioJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                municipioJLabel.setText("Município:");
+        municipioJLabel.setText("Município:");
 
-                jLabel1.setText("Codigo Mun.:");
+        codMunicipioJLabel.setText("Codigo Mun.:");
 
-                codMunicipioJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        codMunicipioJTextField.setEditable(false);
+        codMunicipioJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                javax.swing.GroupLayout cadastroFornecedorJPanelLayout = new javax.swing.GroupLayout(
-                                cadastroFornecedorJPanel);
-                cadastroFornecedorJPanel.setLayout(cadastroFornecedorJPanelLayout);
-                cadastroFornecedorJPanelLayout.setHorizontalGroup(
-                                cadastroFornecedorJPanelLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                cadastroFornecedorJPanelLayout.createSequentialGroup()
-                                                                                .addContainerGap()
-                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                .createParallelGroup(
-                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                .addComponent(municipioJTextField,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                291,
-                                                                                                                Short.MAX_VALUE)
-                                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                                .createSequentialGroup()
-                                                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                                                .createParallelGroup(
-                                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                                                                                                false)
-                                                                                                                                                .addComponent(fornecedorJTextField,
-                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                                                160,
-                                                                                                                                                                Short.MAX_VALUE)
-                                                                                                                                                .addComponent(fornecedorJLabel,
-                                                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                                .addComponent(bairroJLabel,
-                                                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                                .addComponent(bairroJTextField))
-                                                                                                                                .addComponent(municipioJLabel))
-                                                                                                                .addGap(0, 0, Short.MAX_VALUE)))
-                                                                                .addPreferredGap(
-                                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                .createParallelGroup(
-                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                .addComponent(razaoSocialJLabel)
-                                                                                                .addComponent(razaoSocialJTextField,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                167,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addComponent(cnpjJFormattedTextField,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                127,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                                                                cadastroFornecedorJPanelLayout
-                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                .addComponent(cnpjJLabel)
-                                                                                                                                                .addContainerGap(
-                                                                                                                                                                96,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                                .createSequentialGroup()
-                                                                                                                .addComponent(jLabel1)
-                                                                                                                .addPreferredGap(
-                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                .addComponent(codMunicipioJTextField,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))));
-                cadastroFornecedorJPanelLayout.setVerticalGroup(
-                                cadastroFornecedorJPanelLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
-                                                                .addGap(20, 20, 20)
-                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(fornecedorJLabel)
-                                                                                .addComponent(razaoSocialJLabel))
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(fornecedorJTextField,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(razaoSocialJTextField,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(14, 14, 14)
-                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(cnpjJLabel)
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(cnpjJFormattedTextField,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(bairroJLabel)
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(bairroJTextField,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(municipioJLabel)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addGroup(cadastroFornecedorJPanelLayout
-                                                                                                .createParallelGroup(
-                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                .addComponent(jLabel1)
-                                                                                                .addComponent(codMunicipioJTextField,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                .addComponent(municipioJTextField,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addContainerGap(24, Short.MAX_VALUE)));
+        UFJTextField.setEditable(false);
+        UFJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                botoesJPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        UFjLabel.setText("UF:");
 
-                sairJButton.setBackground(new java.awt.Color(25, 25, 25));
-                sairJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/exitIcon.png"))); // NOI18N
-                sairJButton.setText("Sair");
-                sairJButton.setToolTipText("");
-                sairJButton.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                sairJButtonActionPerformed(evt);
-                        }
-                });
+        javax.swing.GroupLayout cadastroFornecedorJPanelLayout = new javax.swing.GroupLayout(cadastroFornecedorJPanel);
+        cadastroFornecedorJPanel.setLayout(cadastroFornecedorJPanelLayout);
+        cadastroFornecedorJPanelLayout.setHorizontalGroup(
+            cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastroFornecedorJPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                        .addComponent(bairroJLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                        .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(municipioJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                            .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                                .addComponent(municipioJLabel)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(66, 66, 66))
+                    .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                        .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(fornecedorJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(fornecedorJLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bairroJTextField))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(razaoSocialJLabel)
+                    .addComponent(razaoSocialJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(cnpjJFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastroFornecedorJPanelLayout.createSequentialGroup()
+                            .addComponent(cnpjJLabel)
+                            .addContainerGap(96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                        .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(codMunicipioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(codMunicipioJLabel))
+                        .addGap(28, 28, 28)
+                        .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UFjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(UFJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+        );
+        cadastroFornecedorJPanelLayout.setVerticalGroup(
+            cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fornecedorJLabel)
+                    .addComponent(razaoSocialJLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fornecedorJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(razaoSocialJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                        .addComponent(cnpjJLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cnpjJFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                        .addComponent(bairroJLabel)
+                        .addGap(8, 8, 8)
+                        .addComponent(bairroJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastroFornecedorJPanelLayout.createSequentialGroup()
+                        .addGap(0, 5, Short.MAX_VALUE)
+                        .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(codMunicipioJLabel)
+                            .addComponent(UFjLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(cadastroFornecedorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(UFJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(codMunicipioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16))
+                    .addGroup(cadastroFornecedorJPanelLayout.createSequentialGroup()
+                        .addComponent(municipioJLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(municipioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
 
-                gravarJButton.setBackground(new java.awt.Color(25, 25, 25));
-                gravarJButton.setIcon(new javax.swing.ImageIcon(
-                                getClass().getResource("/resources/icons/gravarIcon(1).png"))); // NOI18N
-                gravarJButton.setText("Gravar");
-                gravarJButton.setToolTipText("");
-                gravarJButton.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                gravarJButtonActionPerformed(evt);
-                        }
-                });
+        botoesJPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-                javax.swing.GroupLayout botoesJPanelLayout = new javax.swing.GroupLayout(botoesJPanel);
-                botoesJPanel.setLayout(botoesJPanelLayout);
-                botoesJPanelLayout.setHorizontalGroup(
-                                botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botoesJPanelLayout
-                                                                .createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addComponent(gravarJButton,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                135,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                185, Short.MAX_VALUE)
-                                                                .addComponent(sairJButton,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                135,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(21, 21, 21)));
-                botoesJPanelLayout.setVerticalGroup(
-                                botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(botoesJPanelLayout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addGroup(botoesJPanelLayout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(sairJButton,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                52,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(gravarJButton,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                52,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)));
+        sairJButton.setBackground(new java.awt.Color(25, 25, 25));
+        sairJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/exitIcon.png"))); // NOI18N
+        sairJButton.setText("Sair");
+        sairJButton.setToolTipText("");
+        sairJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairJButtonActionPerformed(evt);
+            }
+        });
 
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-                getContentPane().setLayout(layout);
-                layout.setHorizontalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addComponent(botoesJPanel,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
-                                                                                .addComponent(cadastroFornecedorJPanel,
-                                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE))
-                                                                .addContainerGap())
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addGap(120, 120, 120)
-                                                                .addComponent(cUFJTextField,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                201,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)));
-                layout.setVerticalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout
-                                                                .createSequentialGroup()
-                                                                .addContainerGap(56, Short.MAX_VALUE)
-                                                                .addComponent(cUFJTextField,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(38, 38, 38)
-                                                                .addComponent(cadastroFornecedorJPanel,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(botoesJPanel,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(44, 44, 44)));
+        gravarJButton.setBackground(new java.awt.Color(25, 25, 25));
+        gravarJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/gravarIcon(1).png"))); // NOI18N
+        gravarJButton.setText("Gravar");
+        gravarJButton.setToolTipText("");
+        gravarJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gravarJButtonActionPerformed(evt);
+            }
+        });
 
-                pack();
-                setLocationRelativeTo(null);
-        }// </editor-fold>//GEN-END:initComponents
+        javax.swing.GroupLayout botoesJPanelLayout = new javax.swing.GroupLayout(botoesJPanel);
+        botoesJPanel.setLayout(botoesJPanelLayout);
+        botoesJPanelLayout.setHorizontalGroup(
+            botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botoesJPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(gravarJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addComponent(sairJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+        botoesJPanelLayout.setVerticalGroup(
+            botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botoesJPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sairJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gravarJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cadastroFornecedorJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botoesJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cadastroFornecedorJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botoesJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
 
         private void gravarDadosNoBanco() {
                 Connection conn = null;
@@ -395,7 +309,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                         String cMun = codMunicipioJTextField.getText();
                         String cnpj = cnpjJFormattedTextField.getText();
                         String xNome = razaoSocialJTextField.getText();
-                        String cUF = cUFJTextField.getText();
+                        String cUF = UFJTextField.getText();
 
                         // Estabeleça uma conexão com o banco de dados
                         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/payManage_bd", "postgres",
@@ -521,23 +435,24 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                 });
         }
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JLabel bairroJLabel;
-        private javax.swing.JTextField bairroJTextField;
-        private javax.swing.JPanel botoesJPanel;
-        private javax.swing.JTextField cUFJTextField;
-        private javax.swing.JPanel cadastroFornecedorJPanel;
-        private javax.swing.JFormattedTextField cnpjJFormattedTextField;
-        private javax.swing.JLabel cnpjJLabel;
-        private javax.swing.JTextField codMunicipioJTextField;
-        private javax.swing.JLabel fornecedorJLabel;
-        private javax.swing.JTextField fornecedorJTextField;
-        private javax.swing.JButton gravarJButton;
-        private javax.swing.JLabel jLabel1;
-        private javax.swing.JLabel municipioJLabel;
-        private javax.swing.JTextField municipioJTextField;
-        private javax.swing.JLabel razaoSocialJLabel;
-        private javax.swing.JTextField razaoSocialJTextField;
-        private javax.swing.JButton sairJButton;
-        // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField UFJTextField;
+    private javax.swing.JLabel UFjLabel;
+    private javax.swing.JLabel bairroJLabel;
+    private javax.swing.JTextField bairroJTextField;
+    private javax.swing.JPanel botoesJPanel;
+    private javax.swing.JPanel cadastroFornecedorJPanel;
+    private javax.swing.JFormattedTextField cnpjJFormattedTextField;
+    private javax.swing.JLabel cnpjJLabel;
+    private javax.swing.JLabel codMunicipioJLabel;
+    private javax.swing.JTextField codMunicipioJTextField;
+    private javax.swing.JLabel fornecedorJLabel;
+    private javax.swing.JTextField fornecedorJTextField;
+    private javax.swing.JButton gravarJButton;
+    private javax.swing.JLabel municipioJLabel;
+    private javax.swing.JTextField municipioJTextField;
+    private javax.swing.JLabel razaoSocialJLabel;
+    private javax.swing.JTextField razaoSocialJTextField;
+    private javax.swing.JButton sairJButton;
+    // End of variables declaration//GEN-END:variables
 }

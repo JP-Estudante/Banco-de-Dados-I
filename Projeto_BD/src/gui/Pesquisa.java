@@ -2,11 +2,18 @@ package gui;
 
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Pesquisa extends javax.swing.JFrame {
 
     public Pesquisa() {
         initComponents();
+        exibirDadosNoJTable();
     }
 
     public void controlaEsc() {
@@ -21,8 +28,12 @@ public class Pesquisa extends javax.swing.JFrame {
             }
         });
     }
-    
+
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -63,68 +74,36 @@ public class Pesquisa extends javax.swing.JFrame {
 
         tooltipLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/smallQuestionIcon.png"))); // NOI18N
         tooltipLabel.setToolTipText("<html>\n<body>\n<strong> &rarr; Fornecedor </strong><br>\n  Exibe uma lista de fornecedores com base na palavra-chave fornecida.\n</body>\n</html>\n");
-        tooltipLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                tooltipLabelMouseReleased(evt);
-            }
-        });
 
         pesquisaButtonGroup.add(exatoFornecedorJRadioButton);
         exatoFornecedorJRadioButton.setText("--> Fornecedor <--");
         exatoFornecedorJRadioButton.setToolTipText("<html>\n<body>\n<strong> &rarr; Fornecedor &larr; </strong><br>\nExibe uma lista de fornecedores que correspondem exatamente à palavra-chave fornecida.\n</body>\n</html>\n");
-        exatoFornecedorJRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exatoFornecedorJRadioButtonActionPerformed(evt);
-            }
-        });
 
         pesquisaButtonGroup.add(exataDataJRadioButton);
         exataDataJRadioButton.setText("DD/MM/AA <--");
         exataDataJRadioButton.setToolTipText("<html>\n<body>\n<strong> &rarr; Data </strong><br>\nExibe os resultados da data fornecida, até a mais antiga.\n</body>\n</html>\n");
-        exataDataJRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exataDataJRadioButtonActionPerformed(evt);
-            }
-        });
 
         pesquisaButtonGroup.add(adianteDataJRadioButton);
         adianteDataJRadioButton.setText("--> DD/MM/AA");
         adianteDataJRadioButton.setToolTipText("<html>\n<body>\n<strong> &rarr; Data </strong><br>\nExibe os resultados da data fornecida, até a mais recente.\n</body>\n</html>\n");
-        adianteDataJRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adianteDataJRadioButtonActionPerformed(evt);
-            }
-        });
 
         pesquisaButtonGroup.add(esquerdaFornecedorJRadioButton);
         esquerdaFornecedorJRadioButton.setSelected(true);
         esquerdaFornecedorJRadioButton.setText("--> Fornecedor");
         esquerdaFornecedorJRadioButton.setToolTipText("<html>\n<body>\n<strong> &rarr; Fornecedor </strong><br>\n  Exibe uma lista de fornecedores com base na palavra-chave fornecida.\n</body>\n</html>\n");
-        esquerdaFornecedorJRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                esquerdaFornecedorJRadioButtonActionPerformed(evt);
-            }
-        });
 
-        pesquisaTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pesquisaTextFieldActionPerformed(evt);
-            }
-        });
+        pesquisaTextField.setBackground(new java.awt.Color(25, 25, 25));
 
         situaçãoJComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Pago(s)", "Pendente(s)", "Vencido(s)" }));
-        situaçãoJComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                situaçãoJComboBoxActionPerformed(evt);
-            }
-        });
 
+        pesquisaJTable.setBackground(new java.awt.Color(25, 25, 25));
+        pesquisaJTable.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         pesquisaJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {"NORDESTE MATRIZ", "", "2862.45", "10/07/2023", "Pago"}
             },
             new String [] {
-                "Fornecedor", "Data Venc.", "Valor T.", "Situação"
+                "Fornecedor", "Data Venc.", "Valor T.", "Data Cad.", "Situação"
             }
         ));
         jScrollPane1.setViewportView(pesquisaJTable);
@@ -196,37 +175,43 @@ public class Pesquisa extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exataDataJRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exataDataJRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_exataDataJRadioButtonActionPerformed
+    private void exibirDadosNoJTable() {
+        // Configurar conexão com o banco de dados
+        String url = "jdbc:postgresql://localhost:5432/payManage_bd";
+        String user = "postgres";
+        String password = "141171";
 
-    private void esquerdaFornecedorJRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esquerdaFornecedorJRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_esquerdaFornecedorJRadioButtonActionPerformed
+        // Criar modelo de tabela vazio
+        DefaultTableModel tableModel = (DefaultTableModel) pesquisaJTable.getModel();
 
-    private void pesquisaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisaTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pesquisaTextFieldActionPerformed
+        // Conectar-se ao banco de dados e preencher o modelo de tabela com os dados
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+            // Consulta SQL para obter os dados das tabelas
+            String query = "SELECT F.nome_fantasia, P.data_venc, N.valor_total " +
+                    "FROM Fornecedor F " +
+                    "JOIN Parcela P ON P.cod_nfe = F.id_fornecedor " +
+                    "JOIN NFe N ON N.codigo = P.cod_nfe";
 
-    private void situaçãoJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_situaçãoJComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_situaçãoJComboBoxActionPerformed
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
 
-    private void tooltipLabelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tooltipLabelMouseReleased
+            // Preencher o modelo de tabela com os dados do ResultSet
+            while (resultSet.next()) {
+                String nomeFantasia = resultSet.getString("nome_fantasia");
+                String dataVencimento = resultSet.getString("data_venc");
+                double valorTotal = resultSet.getDouble("valor_total");
 
-    }//GEN-LAST:event_tooltipLabelMouseReleased
+                Object[] rowData = { nomeFantasia, dataVencimento, valorTotal };
+                tableModel.addRow(rowData);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-    private void exatoFornecedorJRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exatoFornecedorJRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_exatoFornecedorJRadioButtonActionPerformed
-
-    private void adianteDataJRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adianteDataJRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adianteDataJRadioButtonActionPerformed
-
-    private void controlaEsc(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_controlaEsc
+    private void controlaEsc(java.awt.event.WindowEvent evt) {// GEN-FIRST:event_controlaEsc
         controlaEsc();
-    }//GEN-LAST:event_controlaEsc
+    }// GEN-LAST:event_controlaEsc
 
     public static void main(String args[]) {
         SwingUtilities.invokeLater(() -> {

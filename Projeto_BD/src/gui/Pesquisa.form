@@ -146,9 +146,6 @@
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;strong&gt; &amp;rarr; Fornecedor &lt;/strong&gt;&lt;br&gt;&#xa;  Exibe uma lista de fornecedores com base na palavra-chave fornecida.&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;&#xa;"/>
       </Properties>
-      <Events>
-        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tooltipLabelMouseReleased"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="exatoFornecedorJRadioButton">
       <Properties>
@@ -158,9 +155,6 @@
         <Property name="text" type="java.lang.String" value="--&gt; Fornecedor &lt;--"/>
         <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;strong&gt; &amp;rarr; Fornecedor &amp;larr; &lt;/strong&gt;&lt;br&gt;&#xa;Exibe uma lista de fornecedores que correspondem exatamente &#xe0; palavra-chave fornecida.&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;&#xa;"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exatoFornecedorJRadioButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="exataDataJRadioButton">
       <Properties>
@@ -170,9 +164,6 @@
         <Property name="text" type="java.lang.String" value="DD/MM/AA &lt;--"/>
         <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;strong&gt; &amp;rarr; Data &lt;/strong&gt;&lt;br&gt;&#xa;Exibe os resultados da data fornecida, at&#xe9; a mais antiga.&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;&#xa;"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exataDataJRadioButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="adianteDataJRadioButton">
       <Properties>
@@ -182,9 +173,6 @@
         <Property name="text" type="java.lang.String" value="--&gt; DD/MM/AA"/>
         <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;strong&gt; &amp;rarr; Data &lt;/strong&gt;&lt;br&gt;&#xa;Exibe os resultados da data fornecida, at&#xe9; a mais recente.&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;&#xa;"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adianteDataJRadioButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="esquerdaFornecedorJRadioButton">
       <Properties>
@@ -195,14 +183,13 @@
         <Property name="text" type="java.lang.String" value="--&gt; Fornecedor"/>
         <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;strong&gt; &amp;rarr; Fornecedor &lt;/strong&gt;&lt;br&gt;&#xa;  Exibe uma lista de fornecedores com base na palavra-chave fornecida.&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;&#xa;"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="esquerdaFornecedorJRadioButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="pesquisaTextField">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pesquisaTextFieldActionPerformed"/>
-      </Events>
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="19" green="19" red="19" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="situa&#xe7;&#xe3;oJComboBox">
       <Properties>
@@ -215,9 +202,6 @@
           </StringArray>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="situa&#xe7;&#xe3;oJComboBoxActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
@@ -231,12 +215,31 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="pesquisaJTable">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="19" green="19" red="19" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="0">
-                <Column editable="true" title="Fornecedor" type="java.lang.Object"/>
-                <Column editable="true" title="Data Venc." type="java.lang.Object"/>
-                <Column editable="true" title="Valor T." type="java.lang.Object"/>
-                <Column editable="true" title="Situa&#xe7;&#xe3;o" type="java.lang.Object"/>
+              <Table columnCount="5" rowCount="1">
+                <Column editable="true" title="Fornecedor" type="java.lang.Object">
+                  <Data value="NORDESTE MATRIZ"/>
+                </Column>
+                <Column editable="true" title="Data Venc." type="java.lang.Object">
+                  <Data value=""/>
+                </Column>
+                <Column editable="true" title="Valor T." type="java.lang.Object">
+                  <Data value="2862.45"/>
+                </Column>
+                <Column editable="true" title="Data Cad." type="java.lang.Object">
+                  <Data value="10/07/2023"/>
+                </Column>
+                <Column editable="true" title="Situa&#xe7;&#xe3;o" type="java.lang.Object">
+                  <Data value="Pago"/>
+                </Column>
               </Table>
             </Property>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">

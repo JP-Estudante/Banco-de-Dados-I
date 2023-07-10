@@ -4,6 +4,13 @@ CREATE TABLE Estado(
 	nome_estado VARCHAR(50)
 );
 
+CREATE TABLE Fornecedor(
+	id_fornecedor SERIAL PRIMARY KEY,
+	nome_fantasia VARCHAR(80),
+	CNPJ CHAR(18),
+	razao_social VARCHAR(100)
+);
+
 CREATE TABLE Cidade(
 	codigo SERIAL PRIMARY KEY,
 	c_mun VARCHAR(7) NOT NULL,
@@ -11,24 +18,16 @@ CREATE TABLE Cidade(
 	cod_estado INTEGER,
 	cod_fornecedor INTEGER,
 	bairro VARCHAR(60),		
-	razao_social VARCHAR(100),
 
 	CONSTRAINT fk_cidade_estado FOREIGN KEY(cod_estado) REFERENCES Estado(codigo),
 	CONSTRAINT fk_cidade_fornecedor FOREIGN KEY(cod_fornecedor) REFERENCES Fornecedor(id_fornecedor)
 );
 
-CREATE TABLE Fornecedor(
-	id_fornecedor SERIAL PRIMARY KEY,
-	nome_fantasia VARCHAR(80),
-	CNPJ CHAR(18),
-	razao_social VARCHAR(100),	
-);
-
 CREATE TABLE NFe(
 	codigo SERIAL PRIMARY KEY,
 	chave_acesso CHAR(44) NOT NULL UNIQUE,
-	valor_total DECIMAL(12, 2) NOT NULL
-	data_cadastro DATE,
+	valor_total DECIMAL(12, 2) NOT NULL,
+	data_cadastro DATE
 );
 
 CREATE TABLE Parcela (
@@ -47,15 +46,15 @@ CREATE TABLE Usuario(
 	senha VARCHAR(20)
 );
 
+CREATE TABLE Email(
+	codigo SERIAL PRIMARY KEY,
+	email VARCHAR(120)
+);
+
 CREATE TABLE Configuracao(
 	codigo SERIAL PRIMARY KEY,
 	cod_email INTEGER,
 	FOREIGN KEY (cod_email) REFERENCES Email(codigo)
-);
-
-CREATE TABLE Email(
-	codigo SERIAL PRIMARY KEY,
-	email VARCHAR(120)
 );
 
 -- Inserindo todos os dados da tabela Estado
@@ -100,7 +99,6 @@ ALTER SEQUENCE Cidade_codigo_seq RESTART WITH 1;
 
 -- Comandos da tabela Fornecedor
 SELECT * FROM Fornecedor
-SELECT id_fornecedor, nome_fantasia, CNPJ, razao_social FROM Fornecedor;
 DELETE FROM Fornecedor;
 ALTER SEQUENCE Fornecedor_id_fornecedor_seq RESTART WITH 1;
 

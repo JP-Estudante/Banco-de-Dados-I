@@ -1,5 +1,7 @@
 package gui;
 
+import java.awt.Component;
+import java.awt.Window;
 import java.awt.event.*;
 import java.io.File;
 import java.math.BigInteger;
@@ -14,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import javax.xml.parsers.*;
 import javax.xml.xpath.*;
 import org.w3c.dom.*;
@@ -54,424 +57,322 @@ public class MenuImportar extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // Code">//GEN-BEGIN:initComponents
-        private void initComponents() {
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-                nfeJPanel = new javax.swing.JPanel();
-                chaveAcessoJLabel = new javax.swing.JLabel();
-                valorTotalJLabel = new javax.swing.JLabel();
-                fornecedorJLabel = new javax.swing.JLabel();
-                chaveAcessoJTextField = new javax.swing.JTextField();
-                fornecedorJTextField = new javax.swing.JTextField();
-                valorTotalJTextField = new javax.swing.JTextField();
-                parcelaJLabel = new javax.swing.JLabel();
-                parcelasJTextField = new javax.swing.JTextField();
-                verMaisJButton = new javax.swing.JButton();
-                dataCadastroJLabel = new javax.swing.JLabel();
-                dataCadastroJFormattedTextField = new javax.swing.JFormattedTextField();
-                dataCadastroOBSJLabel = new javax.swing.JLabel();
-                valorTotalOBSJLabel = new javax.swing.JLabel();
-                parcelaOBSJLabel = new javax.swing.JLabel();
-                importarJPanel = new javax.swing.JPanel();
-                caminhoXMLJTextField = new javax.swing.JTextField();
-                procurarJButton = new javax.swing.JButton();
-                botoesJPanel = new javax.swing.JPanel();
-                gravarJButton = new javax.swing.JButton();
-                sairJButton = new javax.swing.JButton();
-                cancelarJButton = new javax.swing.JButton();
+        nfeJPanel = new javax.swing.JPanel();
+        chaveAcessoJLabel = new javax.swing.JLabel();
+        valorTotalJLabel = new javax.swing.JLabel();
+        fornecedorJLabel = new javax.swing.JLabel();
+        chaveAcessoJTextField = new javax.swing.JTextField();
+        fornecedorJTextField = new javax.swing.JTextField();
+        valorTotalJTextField = new javax.swing.JTextField();
+        parcelaJLabel = new javax.swing.JLabel();
+        parcelasJTextField = new javax.swing.JTextField();
+        verMaisJButton = new javax.swing.JButton();
+        dataCadastroJLabel = new javax.swing.JLabel();
+        dataCadastroJFormattedTextField = new javax.swing.JFormattedTextField();
+        dataCadastroOBSJLabel = new javax.swing.JLabel();
+        valorTotalOBSJLabel = new javax.swing.JLabel();
+        parcelaOBSJLabel = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        importarJPanel = new javax.swing.JPanel();
+        caminhoXMLJTextField = new javax.swing.JTextField();
+        procurarJButton = new javax.swing.JButton();
+        botoesJPanel = new javax.swing.JPanel();
+        gravarJButton = new javax.swing.JButton();
+        sairJButton = new javax.swing.JButton();
+        cancelarJButton = new javax.swing.JButton();
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-                setTitle("Menu Importar");
-                setName("importFrame"); // NOI18N
-                setResizable(false);
-                setSize(new java.awt.Dimension(400, 400));
-                setType(java.awt.Window.Type.UTILITY);
-                addWindowListener(new java.awt.event.WindowAdapter() {
-                        public void windowOpened(java.awt.event.WindowEvent evt) {
-                                controlaEsc(evt);
-                        }
-                });
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu Importar");
+        setName("importFrame"); // NOI18N
+        setResizable(false);
+        setSize(new java.awt.Dimension(400, 400));
+        setType(java.awt.Window.Type.UTILITY);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                controlaEsc(evt);
+            }
+        });
 
-                nfeJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("NF-e"));
+        nfeJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("NF-e"));
 
-                chaveAcessoJLabel.setText("Chave de Acesso");
+        chaveAcessoJLabel.setText("Chave de Acesso");
 
-                valorTotalJLabel.setText("Valor total:");
+        valorTotalJLabel.setText("Valor total:");
 
-                fornecedorJLabel.setText("Fornecedor:");
+        fornecedorJLabel.setText("Fornecedor:");
 
-                chaveAcessoJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        chaveAcessoJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                fornecedorJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        fornecedorJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                valorTotalJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        valorTotalJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                parcelaJLabel.setText("Parcelas:");
+        parcelaJLabel.setText("Parcelas:");
 
-                parcelasJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        parcelasJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        parcelasJTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                parcelasJTextFieldActionPerformed(evt);
+            }
+        });
 
-                verMaisJButton.setBackground(new java.awt.Color(25, 25, 25));
-                verMaisJButton.setText("...");
+        verMaisJButton.setBackground(new java.awt.Color(25, 25, 25));
+        verMaisJButton.setText("...");
+        verMaisJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verMaisJButtonActionPerformed(evt);
+            }
+        });
 
-                dataCadastroJLabel.setText("Data cadas.:");
+        dataCadastroJLabel.setText("Data cadas.:");
 
-                dataCadastroJFormattedTextField.setBackground(new java.awt.Color(25, 25, 25));
-                dataCadastroJFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-                                new javax.swing.text.DateFormatter(
-                                                java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        dataCadastroJFormattedTextField.setBackground(new java.awt.Color(25, 25, 25));
+        dataCadastroJFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
-                dataCadastroOBSJLabel.setText("*");
+        dataCadastroOBSJLabel.setText("*");
 
-                valorTotalOBSJLabel.setText("*");
+        valorTotalOBSJLabel.setText("*");
 
-                parcelaOBSJLabel.setText("*");
+        parcelaOBSJLabel.setText("*");
 
-                javax.swing.GroupLayout nfeJPanelLayout = new javax.swing.GroupLayout(nfeJPanel);
-                nfeJPanel.setLayout(nfeJPanelLayout);
-                nfeJPanelLayout.setHorizontalGroup(
-                                nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nfeJPanelLayout
-                                                                .createSequentialGroup()
-                                                                .addGroup(nfeJPanelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                .addGroup(nfeJPanelLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addGap(47, 47, 47)
-                                                                                                .addComponent(valorTotalOBSJLabel)
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                .createSequentialGroup()
-                                                                                                                                .addGap(6, 6, 6)
-                                                                                                                                .addComponent(valorTotalJTextField,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                80,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                                .addComponent(valorTotalJLabel))
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                Short.MAX_VALUE)
-                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                .createSequentialGroup()
-                                                                                                                                .addGap(14, 14, 14)
-                                                                                                                                .addComponent(parcelasJTextField,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                80,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                .addPreferredGap(
-                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                                .addComponent(verMaisJButton))
-                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                .createSequentialGroup()
-                                                                                                                                .addComponent(parcelaOBSJLabel)
-                                                                                                                                .addPreferredGap(
-                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                                .addComponent(parcelaJLabel,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                53,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                .addGap(58, 58, 58)
-                                                                                                                                .addComponent(dataCadastroOBSJLabel)
-                                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                                .addGap(37, 37, 37)
-                                                                                                                                                                .addComponent(
-                                                                                                                                                                                dataCadastroJFormattedTextField,
-                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                83,
-                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                                .addPreferredGap(
-                                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                                                                .addComponent(dataCadastroJLabel))))))
-                                                                                .addGroup(nfeJPanelLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addContainerGap(8,
-                                                                                                                Short.MAX_VALUE)
-                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                .createSequentialGroup()
-                                                                                                                                .addComponent(fornecedorJLabel)
-                                                                                                                                .addGap(218, 218,
-                                                                                                                                                218))
-                                                                                                                .addComponent(fornecedorJTextField,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                275,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                .addGap(143, 143, 143)))
-                                                                .addGap(44, 44, 44))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nfeJPanelLayout
-                                                                .createSequentialGroup()
-                                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                                .addComponent(chaveAcessoJLabel)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(chaveAcessoJTextField,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                331,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(23, 23, 23)));
-                nfeJPanelLayout.setVerticalGroup(
-                                nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nfeJPanelLayout
-                                                                .createSequentialGroup()
-                                                                .addGap(17, 17, 17)
-                                                                .addGroup(nfeJPanelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                .addGroup(nfeJPanelLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(fornecedorJLabel)
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(fornecedorJTextField,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                .createSequentialGroup()
-                                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                                                                .addComponent(valorTotalJLabel)
-                                                                                                                                                .addComponent(valorTotalOBSJLabel))
-                                                                                                                                .addPreferredGap(
-                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                                .addComponent(valorTotalJTextField,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                                .createParallelGroup(
-                                                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                                                .addComponent(parcelaJLabel,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                16,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                .addComponent(parcelaOBSJLabel))))
-                                                                                .addGroup(nfeJPanelLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                                .addComponent(dataCadastroJLabel)
-                                                                                                                .addComponent(dataCadastroOBSJLabel,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                10,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(dataCadastroJFormattedTextField,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addGroup(nfeJPanelLayout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                                .addComponent(verMaisJButton,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                26,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addComponent(parcelasJTextField,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                22,
-                                                                                Short.MAX_VALUE)
-                                                                .addGroup(nfeJPanelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(chaveAcessoJTextField,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(chaveAcessoJLabel))
-                                                                .addContainerGap()));
+        jComboBox1.setBackground(new java.awt.Color(25, 25, 25));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pago", "Pendente" }));
+        jComboBox1.setToolTipText("");
 
-                importarJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Procurar XML"));
+        javax.swing.GroupLayout nfeJPanelLayout = new javax.swing.GroupLayout(nfeJPanel);
+        nfeJPanel.setLayout(nfeJPanelLayout);
+        nfeJPanelLayout.setHorizontalGroup(
+            nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(nfeJPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(chaveAcessoJLabel)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(chaveAcessoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(23, 23, 23))
+                .addGroup(nfeJPanelLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(nfeJPanelLayout.createSequentialGroup()
+                            .addComponent(fornecedorJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(180, 180, 180))
+                        .addGroup(nfeJPanelLayout.createSequentialGroup()
+                            .addComponent(valorTotalOBSJLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(nfeJPanelLayout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(valorTotalJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(valorTotalJLabel))
+                            .addGap(29, 29, 29)
+                            .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nfeJPanelLayout.createSequentialGroup()
+                                    .addComponent(parcelaOBSJLabel)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(parcelaJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(51, 51, 51))
+                                .addGroup(nfeJPanelLayout.createSequentialGroup()
+                                    .addGap(35, 35, 35)
+                                    .addComponent(parcelasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(verMaisJButton)
+                            .addGap(162, 162, 162))
+                        .addGroup(nfeJPanelLayout.createSequentialGroup()
+                            .addComponent(fornecedorJLabel)
+                            .addGap(389, 389, 389)))))
+            .addGroup(nfeJPanelLayout.createSequentialGroup()
+                .addGap(319, 319, 319)
+                .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(nfeJPanelLayout.createSequentialGroup()
+                        .addComponent(dataCadastroOBSJLabel)
+                        .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(nfeJPanelLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(dataCadastroJFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(nfeJPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dataCadastroJLabel)))))
+                .addContainerGap())
+        );
+        nfeJPanelLayout.setVerticalGroup(
+            nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nfeJPanelLayout.createSequentialGroup()
+                .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(nfeJPanelLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(fornecedorJLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fornecedorJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(nfeJPanelLayout.createSequentialGroup()
+                                .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(valorTotalJLabel)
+                                    .addComponent(valorTotalOBSJLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(valorTotalJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(nfeJPanelLayout.createSequentialGroup()
+                                .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(parcelaJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(parcelaOBSJLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(verMaisJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(parcelasJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, nfeJPanelLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dataCadastroJLabel)
+                            .addComponent(dataCadastroOBSJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dataCadastroJFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(nfeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chaveAcessoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chaveAcessoJLabel))
+                .addContainerGap())
+        );
 
-                caminhoXMLJTextField.setBackground(new java.awt.Color(25, 25, 25));
+        importarJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Procurar XML"));
 
-                procurarJButton.setBackground(new java.awt.Color(25, 25, 25));
-                procurarJButton.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/resources/icons/findIcon.png"))); // NOI18N
-                procurarJButton.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                procurarJButtonActionPerformed(evt);
-                        }
-                });
+        caminhoXMLJTextField.setBackground(new java.awt.Color(25, 25, 25));
 
-                javax.swing.GroupLayout importarJPanelLayout = new javax.swing.GroupLayout(importarJPanel);
-                importarJPanel.setLayout(importarJPanelLayout);
-                importarJPanelLayout.setHorizontalGroup(
-                                importarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(importarJPanelLayout.createSequentialGroup()
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)
-                                                                .addComponent(caminhoXMLJTextField,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                407,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(procurarJButton,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                45,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(69, 69, 69)));
-                importarJPanelLayout.setVerticalGroup(
-                                importarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(importarJPanelLayout.createSequentialGroup()
-                                                                .addGroup(importarJPanelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addGroup(importarJPanelLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addGap(22, 22, 22)
-                                                                                                .addComponent(caminhoXMLJTextField,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                .addGroup(importarJPanelLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addGap(14, 14, 14)
-                                                                                                .addComponent(procurarJButton,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                46,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                .addContainerGap(22, Short.MAX_VALUE)));
+        procurarJButton.setBackground(new java.awt.Color(25, 25, 25));
+        procurarJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/findIcon.png"))); // NOI18N
+        procurarJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                procurarJButtonActionPerformed(evt);
+            }
+        });
 
-                botoesJPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-                botoesJPanel.setToolTipText("");
+        javax.swing.GroupLayout importarJPanelLayout = new javax.swing.GroupLayout(importarJPanel);
+        importarJPanel.setLayout(importarJPanelLayout);
+        importarJPanelLayout.setHorizontalGroup(
+            importarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(importarJPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(caminhoXMLJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(procurarJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
+        );
+        importarJPanelLayout.setVerticalGroup(
+            importarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(importarJPanelLayout.createSequentialGroup()
+                .addGroup(importarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(importarJPanelLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(caminhoXMLJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(importarJPanelLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(procurarJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
 
-                gravarJButton.setBackground(new java.awt.Color(25, 25, 25));
-                gravarJButton.setIcon(new javax.swing.ImageIcon(
-                                getClass().getResource("/resources/icons/gravarIcon(1).png"))); // NOI18N
-                gravarJButton.setText("Gravar");
+        botoesJPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        botoesJPanel.setToolTipText("");
 
-                sairJButton.setBackground(new java.awt.Color(25, 25, 25));
-                sairJButton.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/resources/icons/exitIcon(1).png"))); // NOI18N
-                sairJButton.setText("Sair");
-                sairJButton.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                sairJButtonActionPerformed(evt);
-                        }
-                });
+        gravarJButton.setBackground(new java.awt.Color(25, 25, 25));
+        gravarJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/gravarIcon(1).png"))); // NOI18N
+        gravarJButton.setText("Gravar");
+        gravarJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gravarJButtonActionPerformed(evt);
+            }
+        });
 
-                cancelarJButton.setBackground(new java.awt.Color(25, 25, 25));
-                cancelarJButton.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/resources/icons/xIcon.png"))); // NOI18N
-                cancelarJButton.setText("Cancelar");
+        sairJButton.setBackground(new java.awt.Color(25, 25, 25));
+        sairJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/exitIcon(1).png"))); // NOI18N
+        sairJButton.setText("Sair");
+        sairJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairJButtonActionPerformed(evt);
+            }
+        });
 
-                javax.swing.GroupLayout botoesJPanelLayout = new javax.swing.GroupLayout(botoesJPanel);
-                botoesJPanel.setLayout(botoesJPanelLayout);
-                botoesJPanelLayout.setHorizontalGroup(
-                                botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(botoesJPanelLayout.createSequentialGroup()
-                                                                .addGap(31, 31, 31)
-                                                                .addComponent(gravarJButton)
-                                                                .addGap(66, 66, 66)
-                                                                .addComponent(cancelarJButton)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)
-                                                                .addComponent(sairJButton,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                97,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(37, 37, 37)));
-                botoesJPanelLayout.setVerticalGroup(
-                                botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(botoesJPanelLayout.createSequentialGroup()
-                                                                .addGap(18, 18, 18)
-                                                                .addGroup(botoesJPanelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(gravarJButton,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                45,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(sairJButton,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                45,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(cancelarJButton,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                45,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addContainerGap(20, Short.MAX_VALUE)));
+        cancelarJButton.setBackground(new java.awt.Color(25, 25, 25));
+        cancelarJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/xIcon.png"))); // NOI18N
+        cancelarJButton.setText("Cancelar");
+        cancelarJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarJButtonActionPerformed(evt);
+            }
+        });
 
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-                getContentPane().setLayout(layout);
-                layout.setHorizontalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addGap(23, 23, 23)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                false)
-                                                                                .addComponent(nfeJPanel,
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
-                                                                                .addComponent(botoesJPanel,
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
-                                                                                .addComponent(importarJPanel,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                486,
-                                                                                                Short.MAX_VALUE))
-                                                                .addContainerGap(19, Short.MAX_VALUE)));
-                layout.setVerticalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addComponent(importarJPanel,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 37, Short.MAX_VALUE)
-                                                                .addComponent(nfeJPanel,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(botoesJPanel,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(26, 26, 26)));
+        javax.swing.GroupLayout botoesJPanelLayout = new javax.swing.GroupLayout(botoesJPanel);
+        botoesJPanel.setLayout(botoesJPanelLayout);
+        botoesJPanelLayout.setHorizontalGroup(
+            botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botoesJPanelLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(gravarJButton)
+                .addGap(66, 66, 66)
+                .addComponent(cancelarJButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sairJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+        );
+        botoesJPanelLayout.setVerticalGroup(
+            botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botoesJPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(botoesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(gravarJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sairJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelarJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
 
-                setSize(new java.awt.Dimension(544, 495));
-                setLocationRelativeTo(null);
-        }// </editor-fold>//GEN-END:initComponents
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(nfeJPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botoesJPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(importarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 493, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(importarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 28, Short.MAX_VALUE)
+                .addComponent(nfeJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botoesJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
+
+        setSize(new java.awt.Dimension(544, 495));
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+        private void verMaisJButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_verMaisJButtonActionPerformed
+                // TODO add your handling code here:
+        }// GEN-LAST:event_verMaisJButtonActionPerformed
+
+        private void parcelasJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_parcelasJTextFieldActionPerformed
+                // TODO add your handling code here:
+        }// GEN-LAST:event_parcelasJTextFieldActionPerformed
+
+        private void cancelarJButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cancelarJButtonActionPerformed
+                limparCampos();
+        }// GEN-LAST:event_cancelarJButtonActionPerformed
+
+        private void gravarJButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_gravarJButtonActionPerformed
+            limparCampos();
+        }
 
         private void controlaEsc(java.awt.event.WindowEvent evt) {
                 controlaEsc();
@@ -579,11 +480,6 @@ public class MenuImportar extends javax.swing.JFrame {
                                                         }
                                                 }
 
-                                                // Exibindo os valores lidos
-                                                chaveAcessoJTextField.setText(chaveAcessoNumericaBigInt.toString());
-                                                dataCadastroJFormattedTextField.setText(dataFormatada);
-                                                valorTotalJTextField.setText(String.valueOf(valorTotal));
-
                                                 String cnpjBD = "";
 
                                                 try (Connection conn = DriverManager.getConnection(URL, USER,
@@ -607,19 +503,35 @@ public class MenuImportar extends javax.swing.JFrame {
                                                 if (!cnpjBDSemCaracteres.equals(cnpj)) {
                                                         // CNPJ da XML não está presente no banco de dados
                                                         // Abra o JFrame CadastroFornecedor aqui
+
                                                         CadastroFornecedor cadastroFornecedor = new CadastroFornecedor(
                                                                         xFant, xBairro, selectedFile.getAbsolutePath());
                                                         cadastroFornecedor.setVisible(true);
+
                                                 } else {
                                                         try {
                                                                 // Estabelece a conexão com o banco de dados
                                                                 Connection connection = DriverManager.getConnection(URL,
                                                                                 USER, PASSWORD);
 
+                                                                // Exibindo os valores lidos
+                                                                chaveAcessoJTextField.setText(
+                                                                                chaveAcessoNumericaBigInt.toString());
+                                                                dataCadastroJFormattedTextField.setText(dataFormatada);
+                                                                valorTotalJTextField
+                                                                                .setText(String.valueOf(valorTotal));
+                                                                caminhoXMLJTextField.setText(
+                                                                                selectedFile.getAbsolutePath());
+                                                                parcelasJTextField.setText(String.valueOf(vDup));
+                                                                fornecedorJTextField.setText(String.valueOf(xFant));
+                                                                
                                                                 // Prepara a instrução SQL para inserção dos dados
                                                                 String sql = "INSERT INTO NFe (chave_acesso, valor_total, data_cadastro) VALUES (?, ?, ?)";
                                                                 PreparedStatement statement = connection
                                                                                 .prepareStatement(sql);
+
+                                                                // Mostra o Fornecedor no campo
+                                                                String nomeFantasia = obterNomeFantasiaPorCNPJ(cnpj);
 
                                                                 // Define os valores para os parâmetros
                                                                 statement.setString(1,
@@ -627,9 +539,7 @@ public class MenuImportar extends javax.swing.JFrame {
                                                                 statement.setDouble(2, valorTotal);
                                                                 statement.setDate(3,
                                                                                 new java.sql.Date(dataAtual.getTime()));
-                                                                // Mostra o Fornecedor no campo
-                                                                String nomeFantasia = obterNomeFantasiaPorCNPJ(cnpj);
-
+                                                                              
                                                                 // Executa a instrução SQL de inserção
                                                                 statement.executeUpdate();
 
@@ -641,9 +551,6 @@ public class MenuImportar extends javax.swing.JFrame {
                                                                 // Trate a exceção conforme necessário
                                                         }
                                                 }
-
-                                                // Exibir o caminho no JTextField
-                                                caminhoXMLJTextField.setText(selectedFile.getAbsolutePath());
                                         } else {
                                                 // Tratar o caso em que o elemento infNFe não foi encontrado
                                                 System.out.println("Chave de Acesso não encontrada.");
@@ -656,7 +563,6 @@ public class MenuImportar extends javax.swing.JFrame {
                                                 "Erro", JOptionPane.ERROR_MESSAGE);
                         }
                 }
-
         }
 
         public static String obterNomeFantasiaPorCNPJ(String cnpj) {
@@ -679,6 +585,21 @@ public class MenuImportar extends javax.swing.JFrame {
                 return nomeFantasia;
         }
 
+        private void limparCampos() {
+                int x = this.getX();
+                int y = this.getY();
+
+                this.dispose();
+
+                java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                                MenuImportar novoFrame = new MenuImportar();
+                                novoFrame.setLocation(x, y);
+                                novoFrame.setVisible(true);
+                        }
+                });
+        }
+
         public static void main(String args[]) {
                 java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
@@ -687,28 +608,29 @@ public class MenuImportar extends javax.swing.JFrame {
                 });
         }
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JPanel botoesJPanel;
-        private javax.swing.JTextField caminhoXMLJTextField;
-        private javax.swing.JButton cancelarJButton;
-        private javax.swing.JLabel chaveAcessoJLabel;
-        private javax.swing.JTextField chaveAcessoJTextField;
-        private javax.swing.JFormattedTextField dataCadastroJFormattedTextField;
-        private javax.swing.JLabel dataCadastroJLabel;
-        private javax.swing.JLabel dataCadastroOBSJLabel;
-        private javax.swing.JLabel fornecedorJLabel;
-        private javax.swing.JTextField fornecedorJTextField;
-        private javax.swing.JButton gravarJButton;
-        private javax.swing.JPanel importarJPanel;
-        private javax.swing.JPanel nfeJPanel;
-        private javax.swing.JLabel parcelaJLabel;
-        private javax.swing.JLabel parcelaOBSJLabel;
-        private javax.swing.JTextField parcelasJTextField;
-        private javax.swing.JButton procurarJButton;
-        private javax.swing.JButton sairJButton;
-        private javax.swing.JLabel valorTotalJLabel;
-        private javax.swing.JTextField valorTotalJTextField;
-        private javax.swing.JLabel valorTotalOBSJLabel;
-        private javax.swing.JButton verMaisJButton;
-        // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel botoesJPanel;
+    private javax.swing.JTextField caminhoXMLJTextField;
+    private javax.swing.JButton cancelarJButton;
+    private javax.swing.JLabel chaveAcessoJLabel;
+    private javax.swing.JTextField chaveAcessoJTextField;
+    private javax.swing.JFormattedTextField dataCadastroJFormattedTextField;
+    private javax.swing.JLabel dataCadastroJLabel;
+    private javax.swing.JLabel dataCadastroOBSJLabel;
+    private javax.swing.JLabel fornecedorJLabel;
+    private javax.swing.JTextField fornecedorJTextField;
+    private javax.swing.JButton gravarJButton;
+    private javax.swing.JPanel importarJPanel;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JPanel nfeJPanel;
+    private javax.swing.JLabel parcelaJLabel;
+    private javax.swing.JLabel parcelaOBSJLabel;
+    private javax.swing.JTextField parcelasJTextField;
+    private javax.swing.JButton procurarJButton;
+    private javax.swing.JButton sairJButton;
+    private javax.swing.JLabel valorTotalJLabel;
+    private javax.swing.JTextField valorTotalJTextField;
+    private javax.swing.JLabel valorTotalOBSJLabel;
+    private javax.swing.JButton verMaisJButton;
+    // End of variables declaration//GEN-END:variables
 }
