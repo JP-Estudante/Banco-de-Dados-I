@@ -249,13 +249,13 @@ public class ConfigNotificacoes extends javax.swing.JFrame {
     private void obterConfiguracoesDoBanco() {
         // Estabelecer a conexão com o banco de dados
 
-        String url = "jdbc:postgresql://localhost:5432/paymanage_bd";
+        String url = "jdbc:postgresql://localhost:5432/payManage_bd";
         String user = "postgres";
         String password = "141171";
 
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             // Criar a consulta SQL para obter os dados da tabela Configuracao
-            String query = "SELECT codigo, email_alerta FROM Configuracao";
+            String query = "SELECT codigo, email FROM Email";
 
             // Executar a consulta SQL e obter o resultado
             try (Statement statement = connection.createStatement();
@@ -267,7 +267,7 @@ public class ConfigNotificacoes extends javax.swing.JFrame {
                 // Percorrer o resultado e adicionar cada linha à listaDeConfiguracoes
                 while (resultSet.next()) {
                     int codigo = resultSet.getInt("codigo");
-                    String emailAlerta = resultSet.getString("email_alerta");
+                    String emailAlerta = resultSet.getString("email");
                     Configuracao configuracao = new Configuracao(codigo, emailAlerta);
                     listaDeConfiguracoes.add(configuracao);
                 }
@@ -305,11 +305,11 @@ public class ConfigNotificacoes extends javax.swing.JFrame {
 
         try {
             // Estabelecer a conexão com o banco de dados
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/paymanage_bd", "postgres",
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/payManage_bd", "postgres",
                     "141171");
 
             // Define a consulta SQL para inserir o Email
-            String SQL = "INSERT INTO Configuracao (email_alerta) VALUES (?) RETURNING codigo";
+            String SQL = "INSERT INTO Email (email) VALUES (?) RETURNING codigo";
 
             // Prepara a declaração com a consulta SQL
             statement = connection.prepareStatement(SQL);
@@ -369,7 +369,7 @@ public class ConfigNotificacoes extends javax.swing.JFrame {
         // Verifica se a linha já foi selecionada
         if (selectedRow >= 0) {
             // Estabelecer a conexão com o banco de dados
-            String url = "jdbc:postgresql://localhost:5432/paymanage_bd";
+            String url = "jdbc:postgresql://localhost:5432/payManage_bd";
             String user = "postgres";
             String password = "141171";
 
@@ -378,7 +378,7 @@ public class ConfigNotificacoes extends javax.swing.JFrame {
                 String email = (String) emailJTable.getValueAt(selectedRow, 0);
 
                 // Criar a consulta SQL para excluir o email
-                String deleteQuery = "DELETE FROM Configuracao WHERE email_alerta = ?;";
+                String deleteQuery = "DELETE FROM Email WHERE email = ?;";
 
                 // Executar a consulta SQL para excluir o email
                 try (PreparedStatement deleteStatement = connection.prepareStatement(deleteQuery)) {

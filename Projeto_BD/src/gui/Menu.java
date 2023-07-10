@@ -23,6 +23,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         sistemaJMenu = new javax.swing.JMenu();
         importarJMenu = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         pesquisaJMenu = new javax.swing.JMenuItem();
         configJMenu = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -56,8 +57,8 @@ public class Menu extends javax.swing.JFrame {
 
         sistemaJMenu.setText("Sistema");
 
-        importarJMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        importarJMenu.setText("Importar");
+        importarJMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        importarJMenu.setText("Cadastrar Duplicatas");
         importarJMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 importarJMenuActionPerformed(evt);
@@ -65,7 +66,16 @@ public class Menu extends javax.swing.JFrame {
         });
         sistemaJMenu.add(importarJMenu);
 
-        pesquisaJMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem2.setText("Cadastrar Fornecedor");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        sistemaJMenu.add(jMenuItem2);
+
+        pesquisaJMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK));
         pesquisaJMenu.setText("Pesquisar Contas");
         pesquisaJMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,9 +88,11 @@ public class Menu extends javax.swing.JFrame {
 
         configJMenu.setText("Configurações");
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItem1.setText("Alterar Senha");
         configJMenu.add(jMenuItem1);
 
+        notificaçãoJMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_DOWN_MASK));
         notificaçãoJMenuItem.setText("Notificações");
         notificaçãoJMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +134,11 @@ public class Menu extends javax.swing.JFrame {
         ConfigNotificacoes email = new ConfigNotificacoes();
         email.setVisible(true);
     }//GEN-LAST:event_notificaçãoJMenuItemActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        CadastroFornecedor cadFornecedor = new CadastroFornecedor();
+        cadFornecedor.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
    
 public static void main(String[] args) {
     try {
@@ -145,6 +162,7 @@ public static void main(String[] args) {
     private javax.swing.JMenuItem importarJMenu;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem notificaçãoJMenuItem;
     private javax.swing.JMenuItem pesquisaJMenu;
     private javax.swing.JMenu sistemaJMenu;
